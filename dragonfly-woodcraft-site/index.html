@@ -63,6 +63,11 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 #home{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,10,7,.1) 0%,rgba(12,10,7,.5) 55%,rgba(12,10,7,.98) 100%),url('assets/hero-deck-platform.jpg') center 38%/cover no-repeat}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:6rem}
+.hero-layout{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
+.hero-left{flex:1;min-width:0}
+.hero-right{flex-shrink:0;display:flex;align-items:center;justify-content:flex-end;padding-bottom:1rem}
+.hero-logo-badge{width:clamp(160px,18vw,240px);height:auto;opacity:0.92;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.6))}
+@media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:none}}
 .hero-stamp{display:inline-flex;align-items:center;gap:.8rem;background:rgba(12,10,7,.7);border:1px solid var(--line);padding:.5rem 1.1rem;margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-stamp-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
 .hero-stamp span{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pine)}
@@ -165,7 +170,7 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .rev-head .eyebrow{justify-content:center}
 .rev-head .eyebrow::before{display:none}
 .rev-head h2{font-size:clamp(2.6rem,4.4vw,4rem)}
-.rev-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.rev-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);overflow:visible}
 .rcard{background:var(--shadow);padding:2.4rem;display:flex;flex-direction:column}
 .rcard.big{grid-column:span 2;background:var(--plank2);padding:3rem}
 .r-stars{color:var(--pine);font-size:.85rem;letter-spacing:3px;margin-bottom:1.1rem}
@@ -340,7 +345,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 <nav id="navbar">
   <div class="wrap nav-row">
     <div class="nav-brand">
-      <img src="assets/logo.png" alt="Dragonfly Woodcraft"/>
+      <div class="nav-brand-text">Dragonfly<span>Woodcraft</span></div>
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -376,24 +381,30 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 <section id="home">
   <div class="hero-bg"></div>
   <div class="wrap hero-inner">
-    <div class="hero-stamp reveal"><span class="hero-stamp-dot"></span><span>Bristol — Thornbury — South Gloucestershire</span></div>
-    <h1 class="hero-title reveal">CUT ONCE.<br/><span class="ln2">BUILT RIGHT.</span></h1>
-    <p class="hero-sub reveal">Premium decking, fencing and bespoke garden timber work across Bristol, Thornbury and South Gloucestershire. Designed around how you want to use the space — built to last.</p>
-    <div class="hero-cta-row reveal">
-      <a href="tel:07855523033" class="btn btn-pine">Call Darren</a>
-      <a href="https://wa.me/447855523033" class="btn btn-moss">WhatsApp</a>
-      <a href="#gallery" class="btn btn-line">View The Work</a>
-    </div>
-    <div class="hero-rating reveal">
-      <span class="hero-stars">★★★★★</span>
-      <span class="hero-rating-txt"><strong>100% five-star reviews</strong> on Facebook</span>
+    <div class="hero-layout">
+      <div class="hero-left">
+        <div class="hero-stamp reveal"><span class="hero-stamp-dot"></span><span>Bristol — Thornbury — South Gloucestershire</span></div>
+        <h1 class="hero-title reveal">CUT ONCE.<br/><span class="ln2">BUILT RIGHT.</span></h1>
+        <p class="hero-sub reveal">Premium decking, fencing and bespoke garden timber work across Bristol, Thornbury and South Gloucestershire. Designed around how you want to use the space — built to last.</p>
+        <div class="hero-cta-row reveal">
+          <a href="tel:07855523033" class="btn btn-pine">Call Darren</a>
+          <a href="https://wa.me/447855523033" class="btn btn-moss">WhatsApp</a>
+          <a href="#gallery" class="btn btn-line">View The Work</a>
+        </div>
+        <div class="hero-rating reveal">
+          <span class="hero-stars">★★★★★</span>
+          <span class="hero-rating-txt"><strong>100% five-star reviews</strong> on Facebook</span>
+        </div>
+      </div>
+      <div class="hero-right reveal">
+        <img src="assets/logo.png" alt="Dragonfly Woodcraft" class="hero-logo-badge"/>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="trust">
-  <div class="wrap">
-    <div class="trust-row">
+  <div class="trust-row">
       <div class="trust-cell reveal" style="opacity:1;transform:none"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
       <div class="trust-cell reveal"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
       <div class="trust-cell reveal"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
@@ -403,7 +414,6 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <div class="trust-cell reveal"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
       <div class="trust-cell reveal"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
       <div class="trust-cell reveal"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
-    </div>
   </div>
 </div>
 
@@ -512,7 +522,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
           <ul class="matl-list">
             <li><strong>Near zero maintenance</strong> — no oiling, no treating. Wash it down occasionally.</li>
             <li><strong>25-year warranties</strong> — quality boards genuinely deliver on them</li>
-            <li><strong>Splinter-free</strong> — better for families with young children or bare feet</li>
+            <li><strong>Consistent colour</strong> — doesn't grey, silver or fade the way untreated timber does</li>
             <li><strong>Slip resistance</strong> — textured surfaces perform better in wet British conditions</li>
           </ul>
         </div>
@@ -556,8 +566,8 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     </div>
     <div class="proc-line">
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step One</span><h4>First conversation</h4><p>Call or WhatsApp to talk through your project. No hard sell, no obligation — just a straightforward chat about what you have in mind and whether I'm the right person for the job.</p></div>
-      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Two</span><h4>Site visit & quote</h4><p>I come to your garden, take measurements, and talk through the design with you in person. You get a detailed, honest quote — no hidden costs, no surprises when the invoice arrives.</p></div>
-      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Three</span><h4>Materials & design</h4><p>We finalise exactly what you want — timber or composite, dimensions, style, finish. You have the final say on every detail before a single board is cut.</p></div>
+      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Two</span><h4>Site visit & design</h4><p>I come to your garden, take measurements, and talk through the design with you in person. We finalise exactly what you want — timber or composite, dimensions, style, finish.</p></div>
+      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Three</span><h4>Your quote</h4><p>You get a detailed, honest quote — no hidden costs, no surprises when the invoice arrives. The quote details all work to be carried out and includes the payment structure.</p></div>
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Four</span><h4>The build</h4><p>I arrive when I say I will, keep the site clean, and keep you updated throughout. If anything comes up mid-job, I talk to you directly — not around you.</p></div>
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Five</span><h4>Final walkthrough</h4><p>Before I leave, we walk the finished job together. You're satisfied with every detail, or we sort it on the spot. That's the standard, every time.</p></div>
     </div>
