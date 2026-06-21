@@ -39,12 +39,12 @@ h1,h2,h3,h4{font-family:'Anton',sans-serif;font-weight:400;line-height:0.95;colo
 nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:1.1rem 0;transition:background .3s,border-color .3s,padding .3s}
 nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0.8rem 0}
 .nav-row{display:flex;align-items:center;justify-content:space-between}
-.nav-brand{display:flex;align-items:center;gap:.7rem}
+.nav-brand{display:flex;align-items:center;gap:.7rem;margin-right:2rem}
 .nav-brand img{height:90px;width:auto;object-fit:contain}
 .nav-brand-text{font-family:'Anton',sans-serif;font-size:1.05rem;color:var(--white);letter-spacing:.04em;text-transform:uppercase;line-height:1}
 .nav-brand-text span{color:var(--pine);display:block;font-size:.85rem}
-.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
-.nav-links a{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oak-dim);transition:color .25s}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oak-dim);transition:color .25s;white-space:nowrap}
 .nav-links a:hover{color:var(--white)}
 .nav-wa{display:flex;align-items:center;gap:.5rem;background:var(--moss);color:var(--white)!important;padding:.55rem 1.3rem;font-size:.72rem!important;font-weight:700!important;letter-spacing:.1em!important;transition:background .25s!important}
 .nav-wa:hover{background:var(--moss-lt)!important}
@@ -66,7 +66,7 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .hero-layout{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
 .hero-left{flex:1;min-width:0}
 .hero-right{flex-shrink:0;display:flex;align-items:center;justify-content:flex-end;padding-bottom:1rem}
-.hero-logo-badge{width:clamp(160px,18vw,240px);height:auto;opacity:0.92;filter:drop-shadow(0 4px 24px rgba(0,0,0,0.6))}
+.hero-logo-badge{width:clamp(200px,22vw,320px);height:auto;opacity:1;filter:drop-shadow(0 0 0 transparent);image-rendering:crisp-edges}
 @media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:none}}
 .hero-stamp{display:inline-flex;align-items:center;gap:.8rem;background:rgba(12,10,7,.7);border:1px solid var(--line);padding:.5rem 1.1rem;margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-stamp-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
@@ -88,9 +88,9 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .hero-rating-txt{font-size:.82rem;color:var(--oak-dim)}
 .hero-rating-txt strong{color:var(--white);font-weight:600}
 
-.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-row{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.trust-row::-webkit-scrollbar{display:none}
+.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.trust::-webkit-scrollbar{display:none}
+.trust-row{display:flex;width:max-content;min-width:100%}
 .trust-cell{flex:0 0 auto;min-width:170px;padding:1.8rem 1.6rem;text-align:center;border-right:1px solid var(--line)}
 .trust-cell:last-child{border-right:none}
 .trust-num{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--pine);line-height:1}
@@ -355,8 +355,8 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <li><a href="timber-decking.html">Timber Guide</a></li>
       <li><a href="composite-decking.html">Composite Guide</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
-      <li><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">IG</a></li>
-      <li><a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social" aria-label="Facebook">FB</a></li>
+      <li><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener" class="nav-social">Instagram</a></li>
+      <li><a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social">Facebook</a></li>
       <li><a href="https://wa.me/447855523033" class="nav-wa">WhatsApp</a></li>
     </ul>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
@@ -567,7 +567,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     <div class="proc-line">
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step One</span><h4>First conversation</h4><p>Call or WhatsApp to talk through your project. No hard sell, no obligation — just a straightforward chat about what you have in mind and whether I'm the right person for the job.</p></div>
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Two</span><h4>Site visit & design</h4><p>I come to your garden, take measurements, and talk through the design with you in person. We finalise exactly what you want — timber or composite, dimensions, style, finish.</p></div>
-      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Three</span><h4>Your quote</h4><p>You get a detailed, honest quote — no hidden costs, no surprises when the invoice arrives. The quote details all work to be carried out and includes the payment structure.</p></div>
+      <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Three</span><h4>Your quote</h4><p>You get a detailed, honest quote. The quote details all work to be carried out and includes the payment structure.</p></div>
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Four</span><h4>The build</h4><p>I arrive when I say I will, keep the site clean, and keep you updated throughout. If anything comes up mid-job, I talk to you directly — not around you.</p></div>
       <div class="proc-step reveal"><div class="proc-dot"></div><span class="proc-tag">Step Five</span><h4>Final walkthrough</h4><p>Before I leave, we walk the finished job together. You're satisfied with every detail, or we sort it on the spot. That's the standard, every time.</p></div>
     </div>
@@ -730,8 +730,11 @@ window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>{
+  const r=el.getBoundingClientRect();
+  if(r.top<window.innerHeight){el.classList.add('up')}else{obs.observe(el)}
+});
 
 // ===== MANUAL CENTRE-FOCUS CAROUSEL =====
 (function(){
