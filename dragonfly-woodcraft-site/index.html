@@ -733,6 +733,29 @@ window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
+// Trust bar auto-scroll
+const trustRow = document.querySelector('.trust-row');
+let trustScroll = 0;
+let trustPaused = false;
+let trustRAF;
+
+function scrollTrust() {
+  if (!trustPaused) {
+    trustScroll += 0.5;
+    const maxScroll = trustRow.scrollWidth - trustRow.parentElement.clientWidth;
+    if (trustScroll >= maxScroll) trustScroll = 0;
+    trustRow.parentElement.scrollLeft = trustScroll;
+  }
+  trustRAF = requestAnimationFrame(scrollTrust);
+}
+
+trustRow.parentElement.addEventListener('mouseenter', () => trustPaused = true);
+trustRow.parentElement.addEventListener('mouseleave', () => trustPaused = false);
+trustRow.parentElement.addEventListener('touchstart', () => trustPaused = true, {passive:true});
+trustRow.parentElement.addEventListener('touchend', () => setTimeout(() => trustPaused = false, 2000));
+
+scrollTrust();
+
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>{
   const r=el.getBoundingClientRect();
