@@ -49,7 +49,8 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .nav-wa{display:flex;align-items:center;gap:.5rem;background:var(--moss);color:var(--white)!important;padding:.55rem 1.3rem;font-size:.72rem!important;font-weight:700!important;letter-spacing:.1em!important;transition:background .25s!important}
 .nav-wa:hover{background:var(--moss-lt)!important}
 .nav-social{font-family:'DM Mono',monospace;font-size:.68rem!important;font-weight:600!important;letter-spacing:.08em!important;color:var(--oak-dim);border:1px solid var(--line);padding:.4rem .7rem;transition:color .25s,border-color .25s}
-.nav-social-icon{display:flex;align-items:center;justify-content:center;padding:.4rem .5rem}
+.nav-social-icon{display:flex;align-items:center;justify-content:center;padding:.4rem .5rem;color:var(--pine)!important}
+.nav-social-icon:hover{color:var(--white)!important;border-color:var(--pine)}
 .nav-social:hover{color:var(--pine);border-color:var(--pine-dim)}
 .burger{display:none;flex-direction:column;gap:5px;padding:4px}
 .burger span{width:22px;height:1.5px;background:var(--white)}
@@ -61,13 +62,13 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .mob-social a{font-family:'DM Mono',monospace!important;font-size:.78rem!important;letter-spacing:.1em;text-transform:uppercase;color:var(--oak-dim)!important}
 @media(max-width:840px){.nav-links{display:none}.burger{display:flex}}
 
-#home{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}html{overflow-x:hidden}
+#home{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,10,7,.1) 0%,rgba(12,10,7,.5) 55%,rgba(12,10,7,.98) 100%),url('assets/hero-deck-platform.jpg') center 38%/cover no-repeat}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:6rem}
-.hero-layout{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem}
+.hero-layout{display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .hero-left{flex:1;min-width:0}
-.hero-right{flex-shrink:0;display:flex;align-items:flex-start;justify-content:flex-end;padding-top:0}
-.hero-logo-badge{width:auto;height:clamp(200px,28vw,360px);max-width:380px;opacity:1}
+.hero-right{flex-shrink:0;display:flex;align-items:center;justify-content:flex-end}
+.hero-logo-badge{width:clamp(160px,20vw,280px);height:auto;opacity:1}
 @media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:none}}
 .hero-stamp{display:inline-flex;align-items:center;gap:.8rem;background:rgba(12,10,7,.7);border:1px solid var(--line);padding:.5rem 1.1rem;margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-stamp-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
