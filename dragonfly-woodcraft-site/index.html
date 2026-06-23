@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dragonfly Woodcraft | Decking, Fencing & Garden Timber | Bristol to Thornbury</title>
 <meta name="description" content="Premium decking, fencing and garden timber work across Bristol and up to Thornbury. Full design and build — you have the final say on every detail. 100% five-star reviews on Facebook."/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -49,8 +52,8 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .nav-wa{display:flex;align-items:center;gap:.5rem;background:var(--moss);color:var(--white)!important;padding:.55rem 1.3rem;font-size:.72rem!important;font-weight:700!important;letter-spacing:.1em!important;transition:background .25s!important}
 .nav-wa:hover{background:var(--moss-lt)!important}
 .nav-social{font-family:'DM Mono',monospace;font-size:.68rem!important;font-weight:600!important;letter-spacing:.08em!important;color:var(--oak-dim);border:1px solid var(--line);padding:.4rem .7rem;transition:color .25s,border-color .25s}
-.nav-social-icon{display:flex;align-items:center;justify-content:center;padding:.4rem .5rem;color:var(--pine)!important}
-.nav-social-icon:hover{color:var(--white)!important;border-color:var(--pine)}
+.nav-social-icon{display:flex;align-items:center;justify-content:center;padding:.3rem .4rem;border:none!important;opacity:.9;transition:opacity .25s}
+.nav-social-icon:hover{opacity:1}
 .nav-social:hover{color:var(--pine);border-color:var(--pine-dim)}
 .burger{display:none;flex-direction:column;gap:5px;padding:4px}
 .burger span{width:22px;height:1.5px;background:var(--white)}
@@ -65,11 +68,15 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 #home{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,10,7,.1) 0%,rgba(12,10,7,.5) 55%,rgba(12,10,7,.98) 100%),url('assets/hero-deck-platform.jpg') center 38%/cover no-repeat}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:6rem}
-.hero-layout{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.hero-layout{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem}
 .hero-left{flex:1;min-width:0}
-.hero-right{flex-shrink:0;display:flex;align-items:center;justify-content:flex-end}
+.hero-right{flex-shrink:0;display:flex;align-items:flex-start;justify-content:flex-end;padding-top:3.5rem}
 .hero-logo-badge{width:clamp(160px,20vw,280px);height:auto;opacity:1}
-@media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:none}}
+@media(max-width:760px){
+  .hero-layout{flex-direction:column}
+  .hero-right{display:flex;justify-content:flex-start;margin-top:1rem;margin-bottom:1.2rem}
+  .hero-logo-badge{width:clamp(100px,35vw,160px)}
+}
 .hero-stamp{display:inline-flex;align-items:center;gap:.8rem;background:rgba(12,10,7,.7);border:1px solid var(--line);padding:.5rem 1.1rem;margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-stamp-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
 .hero-stamp span{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pine)}
@@ -357,8 +364,28 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <li><a href="timber-decking.html">Timber Guide</a></li>
       <li><a href="composite-decking.html">Composite Guide</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
-      <li><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener" class="nav-social nav-social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></li>
-      <li><a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social nav-social-icon" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+      <li><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener" class="nav-social nav-social-icon" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="25%" style="stop-color:#e6683c"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="75%" style="stop-color:#cc2366"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig-grad)"/>
+          <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+        </svg>
+      </a></li>
+      <li><a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social nav-social-icon" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/>
+          <path d="M15 8h-2C12.5 8 12 8.5 12 9v2h3l-.5 3H12v6h-3v-6H7v-3h2V8.5C9 6.5 10.5 5 12.5 5H15v3z" fill="white"/>
+        </svg>
+      </a></li>
       <li><a href="https://wa.me/447855523033" class="nav-wa">WhatsApp</a></li>
     </ul>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
@@ -407,15 +434,24 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 
 <div class="trust">
   <div class="trust-row">
-      <div class="trust-cell reveal" style="opacity:1;transform:none"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">QUALITY</div><div class="trust-label">High Quality Finish</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
-      <div class="trust-cell reveal"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
+      <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
+      <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
+      <div class="trust-cell"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
+      <div class="trust-cell"><div class="trust-word">QUALITY</div><div class="trust-label">High Quality Finish</div></div>
+      <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
+      <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
+      <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
+      <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+      <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
+      <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
+      <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
+      <div class="trust-cell"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
+      <div class="trust-cell"><div class="trust-word">QUALITY</div><div class="trust-label">High Quality Finish</div></div>
+      <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
+      <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
+      <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
+      <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+      <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
   </div>
 </div>
 
@@ -741,9 +777,9 @@ let trustRAF;
 
 function scrollTrust() {
   if (!trustPaused) {
-    trustScroll += 0.5;
-    const maxScroll = trustRow.scrollWidth - trustRow.parentElement.clientWidth;
-    if (trustScroll >= maxScroll) trustScroll = 0;
+    trustScroll += 0.6;
+    const half = trustRow.scrollWidth / 2;
+    if (trustScroll >= half) trustScroll = 0;
     trustRow.parentElement.scrollLeft = trustScroll;
   }
   trustRAF = requestAnimationFrame(scrollTrust);
