@@ -97,9 +97,8 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .hero-rating-txt{font-size:.82rem;color:var(--oak-dim)}
 .hero-rating-txt strong{color:var(--white);font-weight:600}
 
-.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.trust::-webkit-scrollbar{display:none}
-.trust-row{display:flex;width:max-content;min-width:100%}
+.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.trust-row{display:flex;width:max-content}
 .trust-cell{flex:0 0 auto;min-width:170px;padding:1.8rem 1.6rem;text-align:center;border-right:1px solid var(--line)}
 .trust-cell:last-child{border-right:none}
 .trust-num{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--pine);line-height:1}
@@ -125,6 +124,10 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .svc-head{margin-bottom:3.5rem;max-width:640px}
 .svc-head h2{font-size:clamp(2.6rem,4.4vw,4rem)}
 .plank{display:grid;grid-template-columns:280px 1fr;border-top:1px solid var(--line);position:relative;overflow:hidden;transition:background .35s;background-size:cover;background-position:center;background-repeat:no-repeat}
+.plank-inner{display:contents}
+@media(min-width:1200px){
+  .plank-label{margin-left:calc((100vw - 1200px)/2)}
+}
 .plank::before{content:'';position:absolute;inset:0;background:rgba(14,11,7,0.68);pointer-events:none;transition:background .35s;z-index:0}
 .plank:hover::before{background:rgba(14,11,7,0.55)}
 .plank:last-child{border-bottom:1px solid var(--line)}
@@ -174,7 +177,7 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .g-f{grid-column:span 4;grid-row:span 1}
 @media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.g-a,.g-b,.g-c,.g-d,.g-e,.g-f{grid-column:span 1!important;grid-row:span 1!important}.gal-item{height:200px}}
 
-#reviews{background:var(--shadow);padding:8rem 0}
+#reviews{background:var(--shadow);padding:8rem 0 10rem}
 .rev-head{text-align:center;max-width:640px;margin:0 auto 4rem}
 .rev-head .eyebrow{justify-content:center}
 .rev-head .eyebrow::before{display:none}
@@ -432,6 +435,15 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 
 <div class="trust">
   <div class="trust-row">
+      <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
+      <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
+      <div class="trust-cell"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
+      <div class="trust-cell"><div class="trust-word">QUALITY</div><div class="trust-label">High Quality Finish</div></div>
+      <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
+      <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
+      <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
+      <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+      <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
       <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
       <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
       <div class="trust-cell"><div class="trust-word">REFERENCES</div><div class="trust-label">Available On Request</div></div>
@@ -776,12 +788,15 @@ let trustRAF;
 function scrollTrust() {
   if (!trustPaused) {
     trustScroll += 0.6;
-    const half = trustRow.scrollWidth / 2;
-    if (trustScroll >= half) trustScroll = 0;
+    const third = trustRow.scrollWidth / 3;
+    if (trustScroll >= third) trustScroll = 0;
     trustRow.parentElement.scrollLeft = trustScroll;
   }
   trustRAF = requestAnimationFrame(scrollTrust);
 }
+scrollTrust();
+trustRow.parentElement.addEventListener('mouseenter', () => trustPaused = true);
+trustRow.parentElement.addEventListener('mouseleave', () => trustPaused = false);
 
 trustRow.parentElement.addEventListener('mouseenter', () => trustPaused = true);
 trustRow.parentElement.addEventListener('mouseleave', () => trustPaused = false);
