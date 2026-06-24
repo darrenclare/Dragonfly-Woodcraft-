@@ -124,10 +124,7 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .svc-head{margin-bottom:3.5rem;max-width:640px}
 .svc-head h2{font-size:clamp(2.6rem,4.4vw,4rem)}
 .plank{display:grid;grid-template-columns:280px 1fr;border-top:1px solid var(--line);position:relative;overflow:hidden;transition:background .35s;background-size:cover;background-position:center;background-repeat:no-repeat}
-.plank-inner{display:contents}
-@media(min-width:1200px){
-  .plank-label{margin-left:calc((100vw - 1200px)/2)}
-}
+.plank-wrap{max-width:1200px;margin:0 auto}
 .plank::before{content:'';position:absolute;inset:0;background:rgba(14,11,7,0.68);pointer-events:none;transition:background .35s;z-index:0}
 .plank:hover::before{background:rgba(14,11,7,0.55)}
 .plank:last-child{border-bottom:1px solid var(--line)}
@@ -496,6 +493,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     </div>
   </div>
 
+  <div class="plank-wrap">
   <div class="plank plank--decking reveal">
     <div class="plank-label"><span class="plank-num">01 / TIMBER</span><h3>DECKING</h3></div>
     <div class="plank-body">
@@ -525,6 +523,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     </div>
     <div class="plank-stamp">Timber</div>
   </div>
+  </div><!-- end plank-wrap -->
 </section>
 
 <!-- WHY TIMBER -->
@@ -805,7 +804,7 @@ trustRow.parentElement.addEventListener('touchend', () => setTimeout(() => trust
 
 scrollTrust();
 
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -40px 0px'});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px 0px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>{
   const r=el.getBoundingClientRect();
   if(r.top<window.innerHeight){el.classList.add('up')}else{obs.observe(el)}
