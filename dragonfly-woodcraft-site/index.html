@@ -98,7 +98,9 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .hero-rating-txt strong{color:var(--white);font-weight:600}
 
 .trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-.trust-row{display:flex;width:max-content}
+.trust-row{display:flex;width:max-content;animation:trust-scroll 40s linear infinite}
+.trust-row:hover{animation-play-state:paused}
+@keyframes trust-scroll{0%{transform:translateX(0)}100%{transform:translateX(-33.333%)}}
 .trust-cell{flex:0 0 auto;min-width:170px;padding:1.8rem 1.6rem;text-align:center;border-right:1px solid var(--line)}
 .trust-cell:last-child{border-right:none}
 .trust-num{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--pine);line-height:1}
@@ -778,24 +780,7 @@ window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
-// Trust bar auto-scroll
-const trustRow = document.querySelector('.trust-row');
-let trustScroll = 0;
-let trustPaused = false;
-let trustRAF;
-
-function scrollTrust() {
-  if (!trustPaused) {
-    trustScroll += 0.6;
-    const third = trustRow.scrollWidth / 3;
-    if (trustScroll >= third) trustScroll = 0;
-    trustRow.parentElement.scrollLeft = trustScroll;
-  }
-  trustRAF = requestAnimationFrame(scrollTrust);
-}
-scrollTrust();
-trustRow.parentElement.addEventListener('mouseenter', () => trustPaused = true);
-trustRow.parentElement.addEventListener('mouseleave', () => trustPaused = false);
+// Trust bar handled by CSS animation
 
 trustRow.parentElement.addEventListener('mouseenter', () => trustPaused = true);
 trustRow.parentElement.addEventListener('mouseleave', () => trustPaused = false);
