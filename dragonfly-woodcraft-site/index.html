@@ -36,7 +36,8 @@ h1,h2,h3,h4{font-family:'Anton',sans-serif;font-weight:400;line-height:0.95;colo
 .wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
 .eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine);display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem}
 .eyebrow::before{content:'';width:18px;height:1px;background:var(--pine-dim)}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal{opacity:1;transform:none}
+.reveal.pending{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.up{opacity:1;transform:none}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:1.1rem 0;transition:background .3s,border-color .3s,padding .3s}
@@ -414,15 +415,15 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
   <div class="wrap hero-inner">
     <div class="hero-layout">
       <div class="hero-left">
-        <div class="hero-stamp reveal"><span class="hero-stamp-dot"></span><span>Bristol — Thornbury — South Gloucestershire</span></div>
-        <h1 class="hero-title reveal">CUT ONCE.<br/><span class="ln2">BUILT RIGHT.</span></h1>
-        <p class="hero-sub reveal">Premium decking, fencing and bespoke garden timber work across Bristol, Thornbury and South Gloucestershire. Designed around how you want to use the space — built to last.</p>
-        <div class="hero-cta-row reveal">
+        <div class="hero-stamp"><span class="hero-stamp-dot"></span><span>Bristol — Thornbury — South Gloucestershire</span></div>
+        <h1 class="hero-title">CUT ONCE.<br/><span class="ln2">BUILT RIGHT.</span></h1>
+        <p class="hero-sub">Premium decking, fencing and bespoke garden timber work across Bristol, Thornbury and South Gloucestershire. Designed around how you want to use the space — built to last.</p>
+        <div class="hero-cta-row">
           <a href="tel:07855523033" class="btn btn-pine">Call Darren</a>
           <a href="https://wa.me/447855523033" class="btn btn-moss">WhatsApp</a>
           <a href="#gallery" class="btn btn-line">View The Work</a>
         </div>
-        <div class="hero-rating reveal">
+        <div class="hero-rating">
           <span class="hero-stars">★★★★★</span>
           <span class="hero-rating-txt"><strong>100% five-star reviews</strong> on Facebook</span>
         </div>
@@ -792,9 +793,8 @@ scrollTrust();
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');obs.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px 0px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>{
   const r=el.getBoundingClientRect();
-  if(r.top<window.innerHeight){el.classList.add('up')}else{obs.observe(el)}
+  if(r.top<window.innerHeight){/* already visible, no animation */}else{el.classList.add('pending');obs.observe(el)}
 });
-
 // ===== MANUAL CENTRE-FOCUS CAROUSEL =====
 (function(){
   const slides = document.querySelectorAll('#mcTrack .mcarousel-slide');
