@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gallery | Dragonfly Woodcraft — Decking & Fencing Bristol</title>
+<meta name="description" content="See the work. Decking, fencing and bespoke garden timber projects across Bristol and South Gloucestershire. Gallery and build sequences."/>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --shadow:#0c0a07;--plank:#161108;--plank2:#1f1810;
+  --pine:#e8923a;--pine-dim:#b8702a;--moss:#3a4a3a;--moss-lt:#4f664f;
+  --white:#f5f0e8;--oak-txt:#a89878;--oak-dim:#6e6150;
+  --line:rgba(232,146,58,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--shadow);color:var(--oak-txt);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;mix-blend-mode:overlay;background-image:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,.4) 2px,rgba(255,255,255,.4) 3px)}
+h1,h2,h3,h4{font-family:'Anton',sans-serif;font-weight:400;line-height:0.95;color:var(--white);text-transform:uppercase;letter-spacing:0.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+.eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine);display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--pine-dim)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 2.1rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-pine{background:var(--pine);color:var(--shadow)}.btn-pine:hover{background:#f0a456}
+.btn-moss{background:var(--moss);color:var(--white)}.btn-moss:hover{background:var(--moss-lt)}
+.btn-line{border:1px solid rgba(245,240,232,.25);color:var(--white)}.btn-line:hover{border-color:var(--pine)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:1.1rem 0;transition:background .3s,border-color .3s,padding .3s}
+nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0.8rem 0}
+.nav-row{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.7rem;margin-right:2rem}
+.nav-brand-text{font-family:'Anton',sans-serif;font-size:1.05rem;color:var(--white);letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.nav-brand-text span{color:var(--pine);display:block;font-size:.85rem}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oak-dim);transition:color .25s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-wa{display:flex;align-items:center;gap:.5rem;background:var(--moss);color:var(--white)!important;padding:.55rem 1.3rem;font-size:.72rem!important;font-weight:700!important;letter-spacing:.1em!important;transition:background .25s!important}
+.nav-wa:hover{background:var(--moss-lt)!important}
+.nav-social-icon{display:flex;align-items:center;justify-content:center;padding:.3rem .4rem;opacity:.9;transition:opacity .25s}
+.nav-social-icon:hover{opacity:1}
+.burger{display:none;flex-direction:column;gap:5px;padding:4px}
+.burger span{width:22px;height:1.5px;background:var(--white)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(8,6,4,.98);z-index:290;flex-direction:column;align-items:center;justify-content:center;gap:2.6rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:'Anton',sans-serif;font-size:2rem;color:var(--white);text-transform:uppercase}
+.mob-wa{background:var(--moss)!important;color:var(--white)!important;padding:.9rem 2.6rem!important;font-family:'DM Sans',sans-serif!important;font-size:1rem!important}
+.mob-social{display:flex;gap:1.8rem;margin-top:-1rem}
+.mob-social a{font-family:'DM Mono',monospace!important;font-size:.78rem!important;letter-spacing:.1em;text-transform:uppercase;color:var(--oak-dim)!important}
+@media(max-width:840px){.nav-links{display:none}.burger{display:flex}}
+
+/* PAGE HERO */
+.page-hero{background:var(--plank);padding:10rem 0 5rem;border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(3rem,7vw,6rem)}
+.page-hero p{font-size:1.05rem;color:var(--oak-txt);font-weight:300;max-width:560px;margin-top:1.4rem;line-height:1.75}
+
+/* CAROUSEL */
+#gallery{background:var(--plank);padding:6rem 0}
+.gal-head{margin-bottom:3rem}
+.gal-head h2{font-size:clamp(2.6rem,4.4vw,4rem)}
+.mcarousel{position:relative;height:580px;display:flex;align-items:center;justify-content:center;margin-bottom:3rem;perspective:1400px}
+.mcarousel-track{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.mcarousel-slide{position:absolute;width:62%;max-width:800px;height:540px;border-radius:2px;overflow:hidden;transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .55s,filter .55s;opacity:0;pointer-events:none}
+.mcarousel-slide img{width:100%;height:100%;object-fit:cover}
+.mcarousel-slide.is-active{opacity:1;transform:translateX(0) scale(1) rotateY(0deg);z-index:5;filter:brightness(1);pointer-events:auto}
+.mcarousel-slide.is-prev{opacity:.45;transform:translateX(-58%) scale(.78) rotateY(8deg);z-index:3;filter:brightness(.5)}
+.mcarousel-slide.is-next{opacity:.45;transform:translateX(58%) scale(.78) rotateY(-8deg);z-index:3;filter:brightness(.5)}
+.mcarousel-slide.is-far{opacity:0;transform:translateX(0) scale(.6);z-index:1}
+.mc-cap{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.6rem;background:linear-gradient(to top,rgba(12,10,7,.92),transparent);font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
+.mc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(12,10,7,.7);border:1px solid var(--line);color:var(--white);font-size:1.6rem;line-height:1;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .25s,border-color .25s}
+.mc-arrow:hover{background:var(--pine);color:var(--shadow);border-color:var(--pine)}
+.mc-prev{left:1%}.mc-next{right:1%}
+.mc-dots{position:absolute;bottom:-2.2rem;left:0;right:0;display:flex;justify-content:center;gap:.55rem}
+.mc-dot{width:7px;height:7px;border-radius:50%;background:rgba(245,240,232,.2);transition:background .25s,transform .25s;cursor:pointer}
+.mc-dot.active{background:var(--pine);transform:scale(1.3)}
+@media(max-width:760px){.mcarousel{height:380px}.mcarousel-slide{width:84%;height:340px}.mcarousel-slide.is-prev{transform:translateX(-46%) scale(.7) rotateY(8deg)}.mcarousel-slide.is-next{transform:translateX(46%) scale(.7) rotateY(-8deg)}.mc-arrow{width:38px;height:38px;font-size:1.3rem}}
+
+/* BUILD SEQUENCES */
+#sequences{background:var(--shadow);padding:8rem 0}
+.seq-head{margin-bottom:2.4rem}
+.seq-head h2{font-size:clamp(2.6rem,4.4vw,4rem)}
+.seq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line)}
+.seqcard{background:var(--plank2)}
+.seqcard-stage{position:relative;height:380px;overflow:hidden;background:var(--shadow)}
+.seq-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s ease;filter:saturate(.92)}
+.seq-img.active{opacity:1}
+.seq-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(12,10,7,.65);border:1px solid var(--line);color:var(--white);font-size:1.3rem;line-height:1;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .25s}
+.seq-nav:hover{background:var(--pine);color:var(--shadow)}
+.seq-prev{left:1rem}.seq-next{right:1rem}
+.seq-badge{position:absolute;top:1rem;right:1rem;background:rgba(12,10,7,.75);border:1px solid var(--line);color:var(--white);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.08em;padding:.4rem .8rem;z-index:5}
+.seqcard-info{padding:1.6rem 1.8rem 1.8rem}
+.seqcard-info h4{font-size:1.5rem;margin-bottom:.8rem}
+.seq-progress{height:3px;background:rgba(245,240,232,.1);margin-bottom:.7rem;overflow:hidden}
+.seq-progress-bar{height:100%;background:var(--pine);transition:width .4s ease}
+.seq-step-label{font-size:.82rem;color:var(--oak-dim);font-weight:300}
+@media(max-width:760px){.seq-grid{grid-template-columns:1fr}.seqcard-stage{height:300px}}
+
+/* CTA BAND */
+.cta-band{background:var(--pine);padding:5rem 0}
+.cta-band-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(2rem,4vw,3.2rem);color:var(--shadow)}
+.cta-band-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-dark{background:var(--shadow);color:var(--white)}.btn-dark:hover{background:var(--plank)}
+.btn-white{background:var(--white);color:var(--shadow)}.btn-white:hover{background:#e8e3db}
+
+/* FOOTER */
+footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 0}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-brand{font-family:'Anton',sans-serif;font-size:1.1rem;color:var(--white);text-transform:uppercase}
+.foot-brand span{color:var(--pine)}
+.foot-copy,.foot-built{font-size:.74rem;color:var(--oak-dim)}
+.foot-built a{color:var(--pine)}
+
+/* FLOATING WHATSAPP */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:500;display:flex;align-items:center;gap:.7rem;background:#25D366;color:#fff!important;padding:.75rem 1.3rem .75rem 1rem;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.04em;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,211,102,.45)}
+.wa-float svg{width:22px;height:22px;flex-shrink:0}
+@media(max-width:600px){.wa-float span{display:none}.wa-float{padding:.85rem}}
+</style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","x9j14jjzn0");
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<a href="https://wa.me/447855523033" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Darren">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.132.558 4.13 1.529 5.864L.057 23.57a.75.75 0 0 0 .921.921l5.704-1.473A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.725 9.725 0 0 1-4.953-1.355l-.355-.212-3.683.95.977-3.57-.232-.368A9.725 9.725 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  <span>WhatsApp Darren</span>
+</a>
+
+<nav id="navbar">
+  <div class="wrap nav-row">
+    <div class="nav-brand">
+      <a href="index.html" class="nav-brand-text">Dragonfly<span>Woodcraft</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="timber-decking.html">Timber Guide</a></li>
+      <li><a href="composite-decking.html">Composite Guide</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener" class="nav-social-icon" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig-grad)"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
+      </a></li>
+      <li><a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="nav-social-icon" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M15 8h-2C12.5 8 12 8.5 12 9v2h3l-.5 3H12v6h-3v-6H7v-3h2V8.5C9 6.5 10.5 5 12.5 5H15v3z" fill="white"/></svg>
+      </a></li>
+      <li><a href="https://wa.me/447855523033" class="nav-wa">WhatsApp</a></li>
+    </ul>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="gallery.html" onclick="closeMob()">Gallery</a>
+  <a href="index.html#reviews" onclick="closeMob()">Reviews</a>
+  <a href="timber-decking.html" onclick="closeMob()">Timber Guide</a>
+  <a href="composite-decking.html" onclick="closeMob()">Composite Guide</a>
+  <a href="sustainability.html" onclick="closeMob()">Sustainability</a>
+  <div class="mob-social">
+    <a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <a href="https://wa.me/447855523033" class="mob-wa">WhatsApp Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">The Work</div>
+    <h1>Gallery.</h1>
+    <p>Real projects, real gardens. Browse completed jobs and watch the build sequences to see how each project comes together from start to finish.</p>
+  </div>
+</div>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="gal-head"><div class="eyebrow">Completed Projects</div><h2>See It For Yourself.</h2></div>
+    <div class="mcarousel" id="mainCarousel">
+      <div class="mcarousel-track" id="mcTrack">
+        <div class="mcarousel-slide" data-idx="0"><img src="assets/gallery-decking-bristol.jpg" alt="Decking Bristol"/><div class="mc-cap">Decking — Bristol</div></div>
+        <div class="mcarousel-slide" data-idx="1"><img src="assets/gallery-deck-pergola-thornbury.jpg" alt="Deck with Pergola Thornbury"/><div class="mc-cap">Forest Deck Over River</div></div>
+        <div class="mcarousel-slide" data-idx="2"><img src="assets/gallery-raised-deck-balustrade.jpg" alt="Raised Deck with Balustrade"/><div class="mc-cap">Raised Deck & Balustrade</div></div>
+        <div class="mcarousel-slide" data-idx="3"><img src="assets/gallery-lshaped-decking-fencing.jpg" alt="L-Shaped Decking and Fencing"/><div class="mc-cap">L-Shaped Decking & Fencing</div></div>
+        <div class="mcarousel-slide" data-idx="4"><img src="assets/gallery-childrens-play-area.jpg" alt="Children's Play Area"/><div class="mc-cap">Children's Play Area</div></div>
+        <div class="mcarousel-slide" data-idx="5"><img src="assets/gallery-raised-garden-beds.jpg" alt="Raised Garden Beds"/><div class="mc-cap">Raised Garden Beds</div></div>
+        <div class="mcarousel-slide" data-idx="6"><img src="assets/gallery-bespoke-woodland-platform.jpg" alt="Bespoke Woodland Platform"/><div class="mc-cap">Decking Staircase</div></div>
+        <div class="mcarousel-slide" data-idx="7"><img src="assets/gallery-custom-timber-shed.jpg" alt="Custom Timber Shed"/><div class="mc-cap">Custom Timber Shed</div></div>
+      </div>
+      <button class="mc-arrow mc-prev" id="mcPrev" aria-label="Previous">&#8249;</button>
+      <button class="mc-arrow mc-next" id="mcNext" aria-label="Next">&#8250;</button>
+      <div class="mc-dots" id="mcDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="sequences">
+  <div class="wrap">
+    <div class="seq-head">
+      <div class="eyebrow">Watch It Come Together</div>
+      <h2>Build Sequences.</h2>
+      <p style="margin-top:1rem;font-size:.95rem;color:var(--oak-txt);font-weight:300;max-width:560px">Step through each project to see exactly how the work is done — from groundwork to final walkthrough.</p>
+    </div>
+    <div class="seq-grid">
+      <div class="seqcard" data-seq="seq1">
+        <div class="seqcard-stage">
+          <img class="seq-img active" data-step="0" src="assets/seq-deck-step1.jpg" alt="Step 1"/>
+          <img class="seq-img" data-step="1" src="assets/seq-deck-step2.jpg" alt="Step 2"/>
+          <img class="seq-img" data-step="2" src="assets/seq-deck-step3.jpg" alt="Step 3"/>
+          <img class="seq-img" data-step="3" src="assets/seq-deck-step4.jpg" alt="Step 4"/>
+          <img class="seq-img" data-step="4" src="assets/seq-deck-step5.jpg" alt="Step 5"/>
+          <button class="seq-nav seq-prev">&#8249;</button>
+          <button class="seq-nav seq-next">&#8250;</button>
+          <div class="seq-badge">Step <span class="seq-cur">1</span> / <span class="seq-tot">5</span></div>
+        </div>
+        <div class="seqcard-info">
+          <h4>Raised Deck & Balustrade</h4>
+          <div class="seq-progress"><div class="seq-progress-bar" style="width:20%"></div></div>
+          <p class="seq-step-label">Posts set, deck boarded</p>
+        </div>
+      </div>
+      <div class="seqcard" data-seq="seq2">
+        <div class="seqcard-stage">
+          <img class="seq-img active" data-step="0" src="assets/seq-shed-step1.jpg" alt="Step 1"/>
+          <img class="seq-img" data-step="1" src="assets/seq-shed-step2.jpg" alt="Step 2"/>
+          <img class="seq-img" data-step="2" src="assets/seq-shed-step3.jpg" alt="Step 3"/>
+          <img class="seq-img" data-step="3" src="assets/seq-shed-step4.jpg" alt="Step 4"/>
+          <button class="seq-nav seq-prev">&#8249;</button>
+          <button class="seq-nav seq-next">&#8250;</button>
+          <div class="seq-badge">Step <span class="seq-cur">1</span> / <span class="seq-tot">4</span></div>
+        </div>
+        <div class="seqcard-info">
+          <h4>Custom Timber Shed</h4>
+          <div class="seq-progress"><div class="seq-progress-bar" style="width:25%"></div></div>
+          <p class="seq-step-label">Frame up, floor down</p>
+        </div>
+      </div>
+      <div class="seqcard" data-seq="seq3">
+        <div class="seqcard-stage">
+          <img class="seq-img active" data-step="0" src="assets/seq-playarea-step1.jpg" alt="Step 1"/>
+          <img class="seq-img" data-step="1" src="assets/seq-playarea-step2.jpg" alt="Step 2"/>
+          <img class="seq-img" data-step="2" src="assets/seq-playarea-step3.jpg" alt="Step 3"/>
+          <img class="seq-img" data-step="3" src="assets/seq-playarea-step4.jpg" alt="Step 4"/>
+          <img class="seq-img" data-step="4" src="assets/seq-playarea-step5.jpg" alt="Step 5"/>
+          <button class="seq-nav seq-prev">&#8249;</button>
+          <button class="seq-nav seq-next">&#8250;</button>
+          <div class="seq-badge">Step <span class="seq-cur">1</span> / <span class="seq-tot">5</span></div>
+        </div>
+        <div class="seqcard-info">
+          <h4>Children's Play Area</h4>
+          <div class="seq-progress"><div class="seq-progress-bar" style="width:20%"></div></div>
+          <p class="seq-step-label">Climbing tower frame going up</p>
+        </div>
+      </div>
+      <div class="seqcard" data-seq="seq4">
+        <div class="seqcard-stage">
+          <img class="seq-img active" data-step="0" src="assets/seq-gardenbeds-step1.jpg" alt="Step 1"/>
+          <img class="seq-img" data-step="1" src="assets/seq-gardenbeds-step2.jpg" alt="Step 2"/>
+          <img class="seq-img" data-step="2" src="assets/seq-gardenbeds-step3.jpg" alt="Step 3"/>
+          <button class="seq-nav seq-prev">&#8249;</button>
+          <button class="seq-nav seq-next">&#8250;</button>
+          <div class="seq-badge">Step <span class="seq-cur">1</span> / <span class="seq-tot">3</span></div>
+        </div>
+        <div class="seqcard-info">
+          <h4>Raised Garden Beds</h4>
+          <div class="seq-progress"><div class="seq-progress-bar" style="width:33%"></div></div>
+          <p class="seq-step-label">First bed filled and ready</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2>Like what you see?<br/>Let's talk.</h2>
+    <div class="cta-band-btns">
+      <a href="tel:07855523033" class="btn btn-dark">Call 07855 523 033</a>
+      <a href="https://wa.me/447855523033" class="btn btn-white">WhatsApp Darren</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-brand">Dragonfly<span>Woodcraft</span></div>
+    <div class="foot-copy">© 2025 Dragonfly Woodcraft. All rights reserved. Fully insured. 3-year workmanship guarantee.</div>
+    <div class="foot-built">Website by <a href="https://solofoundry.co.uk" target="_blank" rel="noopener">SoloFoundry</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40));
+const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
+burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
+function closeMob(){mobMenu.classList.remove('open')}
+
+// ===== CAROUSEL =====
+(function(){
+  const slides=document.querySelectorAll('#mcTrack .mcarousel-slide');
+  const dotsWrap=document.getElementById('mcDots');
+  let current=0;
+  const total=slides.length;
+  slides.forEach((_,i)=>{
+    const dot=document.createElement('div');
+    dot.className='mc-dot'+(i===0?' active':'');
+    dot.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots=dotsWrap.querySelectorAll('.mc-dot');
+  function render(){
+    slides.forEach((s,i)=>{
+      s.classList.remove('is-active','is-prev','is-next','is-far');
+      const diff=(i-current+total)%total;
+      if(diff===0)s.classList.add('is-active');
+      else if(diff===1)s.classList.add('is-next');
+      else if(diff===total-1)s.classList.add('is-prev');
+      else s.classList.add('is-far');
+    });
+    dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+  }
+  function goTo(i){current=(i+total)%total;render();}
+  document.getElementById('mcPrev').addEventListener('click',()=>goTo(current-1));
+  document.getElementById('mcNext').addEventListener('click',()=>goTo(current+1));
+  render();
+})();
+
+// ===== BUILD SEQUENCES =====
+const seqLabels={
+  seq1:['Posts set, deck boarded','First balustrade panel placed','Balustrade complete, corner view','Full run, second angle','Finished — ready to use'],
+  seq2:['Frame up, floor down','Roof trusses going on','Walls framed, ready to clad','Finished — ready to use'],
+  seq3:['Climbing tower frame going up','A-frame and ropes fitted','Swing beam and rings added','Swings hung, nearly there','Finished — ready to play'],
+  seq4:['First bed filled and ready','Long bed built against the wall','All beds in, job complete']
+};
+document.querySelectorAll('.seqcard').forEach(card=>{
+  const seqKey=card.dataset.seq;
+  const imgs=card.querySelectorAll('.seq-img');
+  const total=imgs.length;
+  let step=0;
+  const curEl=card.querySelector('.seq-cur');
+  const barEl=card.querySelector('.seq-progress-bar');
+  const labelEl=card.querySelector('.seq-step-label');
+  function render(){
+    imgs.forEach((img,i)=>img.classList.toggle('active',i===step));
+    curEl.textContent=step+1;
+    barEl.style.width=((step+1)/total*100)+'%';
+    labelEl.textContent=(seqLabels[seqKey]&&seqLabels[seqKey][step])||'';
+  }
+  card.querySelector('.seq-prev').addEventListener('click',()=>{step=(step-1+total)%total;render();});
+  card.querySelector('.seq-next').addEventListener('click',()=>{step=(step+1)%total;render();});
+  render();
+});
+</script>
+</body>
+</html>
