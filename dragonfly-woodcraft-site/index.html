@@ -391,7 +391,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
         <div class="about-mark"><div class="about-mark-txt">Your final say, always</div></div>
         <div class="about-mark"><div class="about-mark-txt">Fully insured</div></div>
         <div class="about-mark"><div class="about-mark-txt">3-year guarantee</div></div>
-        <div class="about-mark"><div class="about-mark-txt">Bristol to Thornbury</div></div>
+        <div class="about-mark"><div class="about-mark-txt">Portishead to Thornbury</div></div>
       </div>
     </div>
   </div>
@@ -447,7 +447,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <p>Call or WhatsApp directly. No hard sell, no obligation — just a straightforward conversation about what's possible.</p>
       <a href="tel:07855523033" class="c-method"><div class="c-icon">📞</div><div><span class="c-label">Phone</span><div class="c-value">07855 523 033</div></div></a>
       <a href="https://wa.me/447855523033" class="c-method"><div class="c-icon">💬</div><div><span class="c-label">WhatsApp</span><div class="c-value">Message directly</div></div></a>
-      <div class="c-method" style="cursor:default"><div class="c-icon">📍</div><div><span class="c-label">Area Covered</span><div class="c-value">Bristol to Thornbury</div></div></div>
+      <div class="c-method" style="cursor:default"><div class="c-icon">📍</div><div><span class="c-label">Area Covered</span><div class="c-value">Portishead to Thornbury</div></div></div>
       <div class="c-method"><div class="c-icon">📷</div><div><span class="c-label">Follow The Work</span><div class="c-value"><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></div></div></div>
     </div>
     <div>
@@ -474,7 +474,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 
 <script>
 const nav=document.getElementById('navbar');
-window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40));
+const setNav=()=>nav.classList.toggle('solid',window.scrollY>40);['scroll','load','pageshow'].forEach(e=>window.addEventListener(e,setNav));setNav();
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
