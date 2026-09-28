@@ -56,14 +56,14 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 @media(max-width:840px){.nav-links{display:none}.burger{display:flex}}
 
 /* HERO */
-#home{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+#home{min-height:100vh;min-height:100svh;padding-top:6.5rem;position:relative;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,10,7,.05) 0%,rgba(12,10,7,.35) 45%,rgba(12,10,7,.97) 100%),url('assets/hero-deck-platform.jpg') center 38%/cover no-repeat}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:6rem}
 .hero-layout{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem}
 .hero-left{flex:1;min-width:0}
 .hero-right{flex-shrink:0;display:flex;align-items:flex-start;justify-content:flex-end;padding-top:3.5rem}
 .hero-logo-badge{width:clamp(160px,20vw,280px);height:auto;opacity:1}
-@media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:flex;justify-content:flex-start;margin-top:1rem;margin-bottom:1.2rem}.hero-logo-badge{width:clamp(100px,35vw,160px)}}
+@media(max-width:760px){.hero-layout{flex-direction:column}.hero-right{display:none}}
 .hero-stamp{display:inline-flex;align-items:center;gap:.8rem;background:rgba(12,10,7,.7);border:1px solid var(--line);padding:.5rem 1.1rem;margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-stamp-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
 .hero-stamp span{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pine)}
@@ -83,6 +83,18 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .hero-stars{color:var(--pine);font-size:1rem;letter-spacing:2px}
 .hero-rating-txt{font-size:.82rem;color:var(--oak-dim)}
 .hero-rating-txt strong{color:var(--white);font-weight:600}
+
+/* MOBILE POLISH */
+@media(max-width:760px){
+#home{min-height:auto;padding-top:6rem}
+.hero-inner{padding-bottom:3rem}
+.hero-bg{background:linear-gradient(to bottom,rgba(12,10,7,.45) 0%,rgba(12,10,7,.7) 40%,rgba(12,10,7,.97) 100%),url('assets/hero-deck-platform.jpg') center 38%/cover no-repeat}
+.hero-sub{color:#d9ccb3;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero-rating{margin-top:2rem}
+.hero-rating-txt{color:var(--oak-txt)}
+#services,#about,#gallery,#contact{padding:4.5rem 0}
+#reviews{padding:4.5rem 0 6rem}
+}
 
 /* TRUST BAR */
 .trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
@@ -186,7 +198,10 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 .contact-box p{font-size:.88rem;color:var(--oak-dim);font-weight:300;margin-bottom:2.2rem}
 .cstack{display:flex;flex-direction:column;gap:.8rem}
 .area-line{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--oak-dim);font-weight:300}
-.area-line strong{color:var(--white)}
+.area-line strong{color:var(--white);display:block;margin-bottom:.8rem}
+.area-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
+.area-tags li{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.04em;color:var(--oak-txt);border:1px solid var(--line);padding:.3rem .65rem;line-height:1.3}
+.area-note{display:block}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:2.6rem}}
 
 /* FOOTER */
@@ -214,7 +229,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dragonfly Woodcraft","description":"Timber and composite decking, fencing, pergolas and bespoke garden structures across Bristol, Thornbury and South Gloucestershire.","url":"https://dragonflywoodcraft.co.uk","telephone":"+447855523033","priceRange":"££","image":"https://dragonflywoodcraft.co.uk/assets/hero-deck-platform.jpg","founder":{"@type":"Person","name":"Darren Clare"},"areaServed":[{"@type":"City","name":"Bristol"},{"@type":"City","name":"Thornbury"},{"@type":"AdministrativeArea","name":"South Gloucestershire"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"13","bestRating":"5"},"sameAs":["https://www.instagram.com/dragonfly_woodcraft","https://www.facebook.com/share/1FhZHXVuKS/"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dragonfly Woodcraft","description":"Timber and composite decking, fencing, pergolas and bespoke garden structures across Bristol, South Gloucestershire and surrounding areas.","url":"https://dragonflywoodcraft.co.uk","telephone":"+447855523033","priceRange":"££","image":"https://dragonflywoodcraft.co.uk/assets/hero-deck-platform.jpg","founder":{"@type":"Person","name":"Darren Clare"},"areaServed":[{"@type":"City","name":"Bristol"},{"@type":"AdministrativeArea","name":"South Gloucestershire"},{"@type":"Place","name":"Clifton"},{"@type":"Place","name":"Westbury-on-Trym"},{"@type":"Place","name":"Abbots Leigh"},{"@type":"Place","name":"Portishead"},{"@type":"Place","name":"Clevedon"},{"@type":"Place","name":"Almondsbury"},{"@type":"Place","name":"Easter Compton"},{"@type":"Place","name":"Olveston"},{"@type":"Place","name":"Tockington"},{"@type":"Place","name":"Alveston"},{"@type":"Place","name":"Thornbury"},{"@type":"Place","name":"Oldbury-on-Severn"},{"@type":"Place","name":"Rockhampton"},{"@type":"Place","name":"Rangeworthy"},{"@type":"Place","name":"Iron Acton"},{"@type":"Place","name":"Chepstow"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"13","bestRating":"5"},"sameAs":["https://www.instagram.com/dragonfly_woodcraft","https://www.facebook.com/share/1FhZHXVuKS/"]}
 </script>
 </head>
 <body>
@@ -270,7 +285,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
   <div class="wrap hero-inner">
     <div class="hero-layout">
       <div class="hero-left">
-        <div class="hero-stamp"><span class="hero-stamp-dot"></span><span>Bristol — Thornbury — South Gloucestershire</span></div>
+        <div class="hero-stamp"><span class="hero-stamp-dot"></span><span>Bristol, South Glos &amp; surrounding areas</span></div>
         <h1 class="hero-title">CUT ONCE.<br/><span class="ln2">BUILT RIGHT.</span></h1>
         <p class="hero-sub">Premium decking, fencing and bespoke garden timber work across Bristol, Thornbury and South Gloucestershire. Designed around how you want to use the space — built to last.</p>
         <div class="hero-cta-row">
@@ -281,9 +296,6 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
           <span class="hero-stars">★★★★★</span>
           <span class="hero-rating-txt"><strong>100% five-star reviews</strong> on Facebook</span>
         </div>
-      </div>
-      <div class="hero-right">
-        <img src="assets/dragonfly-logo-badge.png" alt="Dragonfly Woodcraft" class="hero-logo-badge"/>
       </div>
     </div>
   </div>
@@ -446,7 +458,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
           <a href="tel:07855523033" class="btn btn-pine" style="width:100%">Call 07855 523 033</a>
           <a href="https://wa.me/447855523033" class="btn btn-moss" style="width:100%">WhatsApp Darren</a>
         </div>
-        <div class="area-line"><strong>Serving Bristol to Thornbury.</strong> Based just north of Bristol — local knowledge, local standards, local pride in the work.</div>
+        <div class="area-line"><strong>Areas I cover</strong><ul class="area-tags"><li>Bristol</li><li>Clifton</li><li>Westbury-on-Trym</li><li>Abbots Leigh</li><li>Portishead</li><li>Clevedon</li><li>Almondsbury</li><li>Easter Compton</li><li>Olveston</li><li>Tockington</li><li>Alveston</li><li>Thornbury</li><li>Oldbury-on-Severn</li><li>Rockhampton</li><li>Rangeworthy</li><li>Iron Acton</li><li>Chepstow</li></ul><span class="area-note">Not listed? Message me — if it's nearby, I'll likely cover it.</span></div>
       </div>
     </div>
   </div>
