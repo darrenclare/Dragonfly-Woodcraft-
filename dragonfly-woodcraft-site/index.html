@@ -97,10 +97,9 @@ nav.solid{background:rgba(12,10,7,.96);backdrop-filter:blur(10px);border-bottom:
 }
 
 /* TRUST BAR */
-.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-.trust-row{display:flex;width:max-content;animation:trust-scroll 40s linear infinite}
-.trust-row:hover{animation-play-state:paused}
-@keyframes trust-scroll{0%{transform:translateX(0)}100%{transform:translateX(-33.333%)}}
+.trust{background:var(--plank);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.trust::-webkit-scrollbar{display:none}
+.trust-row{display:flex;width:max-content}
 .trust-cell{flex:0 0 auto;min-width:170px;padding:1.8rem 1.6rem;text-align:center;border-right:1px solid var(--line)}
 .trust-word{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--white);line-height:1;white-space:nowrap}
 .trust-label{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--oak-dim);margin-top:.4rem;white-space:nowrap}
@@ -506,6 +505,31 @@ function closeMob(){mobMenu.classList.remove('open')}
   document.getElementById('mcPrev').addEventListener('click',()=>goTo(current-1));
   document.getElementById('mcNext').addEventListener('click',()=>goTo(current+1));
   render();
+})();
+</script>
+<script>
+/* Trust bar: auto-scrolls, user can swipe/scroll it, auto resumes 2s after they stop */
+(function(){
+  var bar=document.querySelector('.trust'),row=bar&&bar.querySelector('.trust-row');if(!row)return;
+  var SECONDS_PER_LOOP=40,RESUME_MS=2000,pos=null,last=0,resumeAt=0,hovering=false;
+  function hold(){resumeAt=performance.now()+RESUME_MS}
+  ['touchstart','touchmove','pointerdown','wheel'].forEach(function(e){bar.addEventListener(e,hold,{passive:true})});
+  bar.addEventListener('mouseenter',function(){hovering=true});
+  bar.addEventListener('mouseleave',function(){hovering=false;hold()});
+  bar.addEventListener('scroll',function(){if(performance.now()<resumeAt){pos=bar.scrollLeft;hold()}},{passive:true});
+  function step(now){
+    var w=row.scrollWidth/3,dt=last?Math.min(now-last,100):0;last=now;
+    if(w>0){
+      if(pos===null){pos=w;bar.scrollLeft=pos}
+      if(!hovering&&now>=resumeAt){
+        pos+=w/(SECONDS_PER_LOOP*1000)*dt;
+        if(pos>=2*w)pos-=w; else if(pos<w*0.5)pos+=w;
+        bar.scrollLeft=pos;
+      }else{pos=bar.scrollLeft}
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
 })();
 </script>
 </body>
