@@ -331,7 +331,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 
 <script>
 const nav=document.getElementById('navbar');
-window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40));
+const setNav=()=>nav.classList.toggle('solid',window.scrollY>40);['scroll','load','pageshow'].forEach(e=>window.addEventListener(e,setNav));setNav();
 const burger=document.getElementById('burger'),mobMenu=document.getElementById('mobMenu');
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
