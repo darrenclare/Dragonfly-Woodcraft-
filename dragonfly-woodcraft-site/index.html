@@ -220,6 +220,30 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 /* BRAND: logo + mobile label legibility */
 .nav-logo{width:48px;height:auto;object-fit:contain;display:block}
 @media(max-width:760px){.nav-logo{width:42px}.eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:600}.hero-stamp span{font-size:.74rem;letter-spacing:.1em;font-weight:600}.trust-label{font-size:.7rem}}
+
+/* MOBILE ACTION BAR */
+.mob-bar{display:none}
+@media(max-width:760px){
+.mob-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:500;gap:.6rem;background:rgba(12,10,7,.97);border-top:1px solid var(--line);padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom))}
+.mob-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem .5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.mob-bar-call{background:var(--pine);color:var(--shadow)!important}
+.mob-bar-wa{background:#25D366;color:#fff!important}
+.wa-float{display:none!important}
+body{padding-bottom:4.8rem}
+}
+
+/* MOBILE: SHORTER PAGE */
+.rev-swipe{display:none}
+@media(max-width:760px){
+.svc-card{min-height:250px}.svc-card-tags{display:none}.svc-card-body{padding:1.6rem 1.4rem 1.4rem}.svc-card-body p{font-size:.92rem;margin-bottom:1rem}
+.about-grid{gap:1.6rem}.about-photo img{height:240px}.about-copy p:nth-of-type(3){display:none}.about-marks{display:none}
+.rev-head{margin-bottom:2rem}
+.rev-masonry{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.8rem;background:none;margin:0 -2rem;padding:0 2rem;scroll-padding:0 2rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rev-masonry::-webkit-scrollbar{display:none}
+.rcard,.rcard.big{flex:0 0 86%;scroll-snap-align:start;border:1px solid var(--line);padding:1.8rem}
+.rev-swipe{display:block;text-align:center;margin-top:1.2rem;font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pine)}
+.rev-note{margin-top:1rem}
+}
 </style>
 
 <!-- Microsoft Clarity -->
@@ -316,7 +340,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
     <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
     <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
-    <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+    <div class="trust-cell"><div class="trust-word">12-MONTH</div><div class="trust-label">Guarantee</div></div>
     <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
     <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
     <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
@@ -325,7 +349,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
     <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
     <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
-    <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+    <div class="trust-cell"><div class="trust-word">12-MONTH</div><div class="trust-label">Guarantee</div></div>
     <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
     <div class="trust-cell"><div class="trust-word">INSURED</div><div class="trust-label">Fully Covered</div></div>
     <div class="trust-cell"><div class="trust-word">15+ YEARS</div><div class="trust-label">Experience</div></div>
@@ -334,7 +358,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
     <div class="trust-cell"><div class="trust-word">PASSIONATE</div><div class="trust-label">About The Craft</div></div>
     <div class="trust-cell"><div class="trust-word">FULL SERVICE</div><div class="trust-label">Plan, Design & Build</div></div>
     <div class="trust-cell"><div class="trust-word">YOUR CALL</div><div class="trust-label">Final Say Is Yours</div></div>
-    <div class="trust-cell"><div class="trust-word">3-YR</div><div class="trust-label">Guarantee</div></div>
+    <div class="trust-cell"><div class="trust-word">12-MONTH</div><div class="trust-label">Guarantee</div></div>
     <div class="trust-cell"><div class="trust-word">100% ★★★★★</div><div class="trust-label">Facebook Reviews</div></div>
   </div>
 </div>
@@ -396,7 +420,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
         <div class="about-mark"><div class="about-mark-txt">Full design & build</div></div>
         <div class="about-mark"><div class="about-mark-txt">Your final say, always</div></div>
         <div class="about-mark"><div class="about-mark-txt">Fully insured</div></div>
-        <div class="about-mark"><div class="about-mark-txt">3-year guarantee</div></div>
+        <div class="about-mark"><div class="about-mark-txt">12-month guarantee</div></div>
         <div class="about-mark"><div class="about-mark-txt">Portishead to Thornbury</div></div>
       </div>
     </div>
@@ -441,6 +465,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <div class="rcard"><div class="r-stars">★★★★★</div><p class="r-txt">"Darren has transformed a garden that has been neglected forever into the most amazing lawn and outdoor space! Excellent in absolutely every respect."</p><div class="r-meta"><div class="r-init">E</div><div><div class="r-name">Emma Thomas-Howell</div><div class="r-service">Garden Transformation</div></div></div></div>
       <div class="rcard"><div class="r-stars">★★★★★</div><p class="r-txt">"Darren did a superb job installing a replacement fence for us - 6ft panels with concrete pillars. Communication was excellent start to finish, and we're delighted with the result!"</p><div class="r-meta"><div class="r-init">A</div><div><div class="r-name">Andrew Wilson</div><div class="r-service">Fencing</div></div></div></div>
     </div>
+    <p class="rev-swipe">Swipe for more reviews &rarr;</p>
     <p class="rev-note">All reviews from verified customers via Facebook.</p>
   </div>
 </section>
@@ -451,9 +476,6 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       <div class="eyebrow">Get In Touch</div>
       <h2>Ready to talk<br/>about your project?</h2>
       <p>Call or WhatsApp directly. No hard sell, no obligation — just a straightforward conversation about what's possible.</p>
-      <a href="tel:07855523033" class="c-method"><div class="c-icon">📞</div><div><span class="c-label">Phone</span><div class="c-value">07855 523 033</div></div></a>
-      <a href="https://wa.me/447855523033" class="c-method"><div class="c-icon">💬</div><div><span class="c-label">WhatsApp</span><div class="c-value">Message directly</div></div></a>
-      <div class="c-method" style="cursor:default"><div class="c-icon">📍</div><div><span class="c-label">Area Covered</span><div class="c-value">Portishead to Thornbury</div></div></div>
       <div class="c-method"><div class="c-icon">📷</div><div><span class="c-label">Follow The Work</span><div class="c-value"><a href="https://www.instagram.com/dragonfly_woodcraft?igsh=Z3o1aTN1NDNtOXA2&utm_source=qr" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/share/1FhZHXVuKS/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></div></div></div>
     </div>
     <div>
@@ -473,7 +495,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 <footer>
   <div class="wrap foot-row">
     <div class="foot-brand">Dragonfly<span>Woodcraft</span></div>
-    <div class="foot-copy">© 2025 Dragonfly Woodcraft. All rights reserved. All timber sourced from FSC-certified merchants. Fully insured. 3-year workmanship guarantee.</div>
+    <div class="foot-copy">© 2026 Dragonfly Woodcraft. All rights reserved. All timber sourced from FSC-certified merchants. Fully insured. 12-month workmanship guarantee.</div>
     <div class="foot-built">Website designed, maintained and hosted by <a href="https://solofoundry.co.uk" target="_blank" rel="noopener">SoloFoundry</a></div>
   </div>
 </footer>
@@ -539,5 +561,6 @@ function closeMob(){mobMenu.classList.remove('open')}
   requestAnimationFrame(step);
 })();
 </script>
+<div class="mob-bar"><a href="tel:07855523033" class="mob-bar-call">Call Darren</a><a href="https://wa.me/447855523033" class="mob-bar-wa">WhatsApp</a></div>
 </body>
 </html>

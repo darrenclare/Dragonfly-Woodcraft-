@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Timber Decking Bristol & Thornbury | Dragonfly Woodcraft</title>
-<meta name="description" content="Expert timber decking installation across Bristol, Thornbury and South Gloucestershire. FSC-certified hardwood, 15+ years experience, 3-year guarantee. Get a free quote from Darren Clare."/>
+<meta name="description" content="Expert timber decking installation across Bristol, Thornbury and South Gloucestershire. FSC-certified hardwood, 15+ years experience, 12-month guarantee. Get a free quote from Darren Clare."/>
 <link rel="canonical" href="https://dragonflywoodcraft.co.uk/timber-decking.html"/>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
@@ -166,6 +166,17 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 /* BRAND: logo + mobile label legibility */
 .nav-logo{width:48px;height:auto;object-fit:contain;display:block}
 @media(max-width:760px){.nav-logo{width:42px}.eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:600}.hero-stamp span{font-size:.74rem;letter-spacing:.1em;font-weight:600}.trust-label{font-size:.7rem}}
+
+/* MOBILE ACTION BAR */
+.mob-bar{display:none}
+@media(max-width:760px){
+.mob-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:500;gap:.6rem;background:rgba(12,10,7,.97);border-top:1px solid var(--line);padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom))}
+.mob-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem .5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.mob-bar-call{background:var(--pine);color:var(--shadow)!important}
+.mob-bar-wa{background:#25D366;color:#fff!important}
+.wa-float{display:none!important}
+body{padding-bottom:4.8rem}
+}
 </style>
 </head>
 <body>
@@ -355,7 +366,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
       </div>
       <div class="faq-item">
         <button class="faq-q"><span class="faq-q-txt">What guarantee do you offer?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a">I offer a three-year workmanship guarantee on all builds. That covers structural issues and anything related to how the job was done. It doesn't cover normal weathering of natural timber (which is expected) or damage from misuse. I'm also fully insured — public liability and employer's liability — and references are available on request.</div>
+        <div class="faq-a">I offer a 12-month workmanship guarantee on all builds. That covers structural issues and anything related to how the job was done. It doesn't cover normal weathering of natural timber (which is expected) or damage from misuse. I'm also fully insured — public liability and employer's liability — and references are available on request.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span class="faq-q-txt">Do you work in my area?</span><span class="faq-icon">+</span></button>
@@ -387,7 +398,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 <footer>
   <div class="wrap foot-row">
     <div class="foot-brand">Dragonfly<span>Woodcraft</span></div>
-    <div class="foot-copy">© 2025 Dragonfly Woodcraft. All rights reserved. All timber sourced from FSC-certified merchants. Fully insured. 3-year workmanship guarantee.</div>
+    <div class="foot-copy">© 2026 Dragonfly Woodcraft. All rights reserved. All timber sourced from FSC-certified merchants. Fully insured. 12-month workmanship guarantee.</div>
     <div class="foot-built">Website by <a href="https://solofoundry.co.uk" target="_blank" rel="noopener">SoloFoundry</a></div>
   </div>
 </footer>
@@ -406,5 +417,6 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 </script>
+<div class="mob-bar"><a href="tel:07855523033" class="mob-bar-call">Call Darren</a><a href="https://wa.me/447855523033" class="mob-bar-wa">WhatsApp</a></div>
 </body>
 </html>
