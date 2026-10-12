@@ -166,6 +166,17 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 /* BRAND: logo + mobile label legibility */
 .nav-logo{width:48px;height:auto;object-fit:contain;display:block}
 @media(max-width:760px){.nav-logo{width:42px}.eyebrow{font-size:.8rem;letter-spacing:.12em;font-weight:600}.hero-stamp span{font-size:.74rem;letter-spacing:.1em;font-weight:600}.trust-label{font-size:.7rem}}
+
+/* MOBILE ACTION BAR */
+.mob-bar{display:none}
+@media(max-width:760px){
+.mob-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:500;gap:.6rem;background:rgba(12,10,7,.97);border-top:1px solid var(--line);padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom))}
+.mob-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem .5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.mob-bar-call{background:var(--pine);color:var(--shadow)!important}
+.mob-bar-wa{background:#25D366;color:#fff!important}
+.wa-float{display:none!important}
+body{padding-bottom:4.8rem}
+}
 </style>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","x9j14jjzn0");
@@ -374,7 +385,7 @@ footer{background:var(--shadow);border-top:1px solid var(--line);padding:2.4rem 
 <footer>
   <div class="wrap foot-row">
     <div class="foot-brand">Dragonfly<span>Woodcraft</span></div>
-    <div class="foot-copy">© 2025 Dragonfly Woodcraft. All rights reserved. Fully insured. 3-year workmanship guarantee.</div>
+    <div class="foot-copy">© 2026 Dragonfly Woodcraft. All rights reserved. Fully insured. 12-month workmanship guarantee.</div>
     <div class="foot-built">Website by <a href="https://solofoundry.co.uk" target="_blank" rel="noopener">SoloFoundry</a></div>
   </div>
 </footer>
@@ -386,5 +397,6 @@ const burger=document.getElementById('burger'),mobMenu=document.getElementById('
 burger.addEventListener('click',()=>mobMenu.classList.toggle('open'));
 function closeMob(){mobMenu.classList.remove('open')}
 </script>
+<div class="mob-bar"><a href="tel:07855523033" class="mob-bar-call">Call Darren</a><a href="https://wa.me/447855523033" class="mob-bar-wa">WhatsApp</a></div>
 </body>
 </html>
