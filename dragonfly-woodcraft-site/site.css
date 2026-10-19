@@ -336,3 +336,6 @@ section{padding:5rem 0}
 /* Shed sequence: square frames, portrait shots anchored to the roof */
 .seq-block .seq-row.shed img{aspect-ratio:1/1}
 .seq-row.shed img.tall{object-position:center 8%}
+
+.rev-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem}
+.rev-foot .rev-note{margin:0}
