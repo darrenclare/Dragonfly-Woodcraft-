@@ -11,176 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-:root{--walnut:#2b1d12;--walnut-2:#3a2819;--oak:#e6d6b8;--oak-2:#efe3cc;--sawdust:#f8f2e7;--orange:#d9782d;--orange-dk:#b85f1c;--moss:#55603e;--line:#e1d2b6}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{font-family:Barlow,system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;background:var(--sawdust);color:var(--walnut);-webkit-font-smoothing:antialiased}
-img{display:block;width:100%;height:100%;object-fit:cover}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;line-height:1;text-transform:uppercase;letter-spacing:.005em}
-h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:2rem}
-h3{font-size:1.55rem}
-.wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
-section{padding:5rem 0}
-
-/* Buttons */
-.ctas{display:flex;flex-wrap:wrap;gap:.8rem}
-.btn{display:inline-block;padding:.95rem 1.35rem;border-radius:6px;font-weight:700;text-decoration:none;text-align:center;transition:background .2s,color .2s}
-.btn-main{background:var(--orange);color:#fff}.btn-main:hover{background:var(--orange-dk)}
-.btn-alt{border:2px solid var(--walnut);color:var(--walnut)}.btn-alt:hover{background:var(--walnut);color:var(--sawdust)}
-.btn-light{border:2px solid var(--sawdust);color:var(--sawdust)}.btn-light:hover{background:var(--sawdust);color:var(--walnut)}
-.text-link{display:inline-block;margin-top:1.8rem;font-weight:700;color:var(--orange-dk)}
-
-/* Nav */
-.nav{position:sticky;top:0;z-index:40;background:var(--sawdust);border-bottom:1px solid var(--line)}
-.nav-row{display:flex;align-items:center;gap:1.5rem;min-height:68px}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:Anton,sans-serif;font-size:1.3rem;text-transform:uppercase}
-.brand img{width:52px;height:auto}
-.links{display:flex;align-items:center;gap:1.4rem;margin-left:auto}
-.links a{text-decoration:none;font-weight:600}
-.links a:not(.nav-cta):hover{color:var(--orange-dk)}
-.nav-cta{background:var(--walnut);color:var(--sawdust)!important;padding:.6rem 1rem;border-radius:6px}
-.burger{display:none;margin-left:auto;background:none;border:0;padding:.6rem;cursor:pointer}
-.burger span{display:block;width:24px;height:2px;background:var(--walnut);margin:5px 0}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 1.15fr;background:var(--oak);padding:0;min-height:min(78vh,720px)}
-.hero-photo{order:2}
-.hero-copy{order:1;align-self:center;padding:3.5rem 3rem 3.5rem max(1.5rem,calc((100vw - 1180px)/2 + 1.5rem))}
-.hero h1{font-size:clamp(2.8rem,5.4vw,5.1rem)}
-.hero h1 span{display:block}.hero .l2{color:var(--orange-dk)}
-.lede{max-width:42ch;margin:1.2rem 0 1.8rem;font-size:1.15rem}
-.rating{margin-top:1.4rem;font-weight:600}.stars{color:var(--orange-dk);letter-spacing:2px;margin-right:.4rem}
-
-/* Trust bar */
-.trust{background:var(--walnut);color:var(--sawdust);overflow-x:auto;scrollbar-width:none}
-.trust::-webkit-scrollbar{display:none}
-.trust-row{display:flex;width:max-content}
-.trust-cell{padding:1.1rem 2.2rem;border-right:1px solid rgba(248,242,231,.15);white-space:nowrap}
-.trust-cell strong{font-family:Anton,sans-serif;font-weight:400;font-size:1.25rem;text-transform:uppercase;margin-right:.5rem}
-.trust-cell span{color:#d9c9ab}
-
-/* Services */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-.svc{display:block;text-decoration:none;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 0 var(--line)}
-.svc-img{aspect-ratio:4/3}
-.svc h3{margin:1.2rem 1.3rem .4rem}
-.svc p{margin:0 1.3rem}
-.svc-link{display:block;margin:1rem 1.3rem 1.3rem;font-weight:700;color:var(--orange-dk)}
-.svc:hover .svc-link{text-decoration:underline}
-
-/* Steps */
-.steps{background:var(--walnut);color:var(--sawdust)}
-.step-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--orange)}
-.step-list li{padding:1.6rem 2rem 0 0}
-.step-n{display:block;font-family:Anton,sans-serif;font-size:3.4rem;line-height:1;color:var(--orange);margin-bottom:.6rem}
-.step-list h3{margin-bottom:.5rem}
-.step-list p{max-width:34ch;color:#e9dcc6}
-
-/* Build sequence */
-.seq-head{margin-bottom:2rem}.seq-head h2{margin-bottom:.5rem}.seq-head p{color:var(--moss);font-weight:600}
-.seq-row{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
-.seq-row li{counter-increment:s}
-.seq-row img{aspect-ratio:3/4;height:auto;border-radius:4px;box-shadow:0 0 0 8px #fff,0 6px 18px rgba(43,29,18,.18)}
-.seq-row span{display:block;margin-top:1.1rem;font-weight:600}
-.seq-row span::before{content:counter(s) '. ';color:var(--orange-dk);font-weight:700}
-
-/* Recent work */
-.work{background:var(--oak-2)}
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
-.work-grid figure{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden}
-.work-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .9rem .7rem;background:linear-gradient(transparent,rgba(43,29,18,.75));color:#fff;font-weight:600;font-size:.95rem}
-
-/* Reviews */
-.quote-big{max-width:900px;margin-bottom:2.4rem}
-.quote-big blockquote{font-family:Anton,sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.15}
-.quote-big figcaption,.rcard figcaption{margin-top:1rem;color:var(--orange-dk);font-weight:700}
-.rev-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.rcard{background:#fff;border-radius:6px;padding:1.5rem;box-shadow:0 1px 0 var(--line)}
-.rcard blockquote{font-size:1rem}
-.rcard figcaption{font-size:.95rem}
-.rev-row .rcard:nth-child(n+7){display:none}
-.rev-note{margin-top:1.4rem;font-size:.95rem;color:#6b5843}
-
-/* About */
-.about{background:var(--oak)}
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center}
-.about-photo{aspect-ratio:4/3;border-radius:4px;overflow:hidden}
-.about-copy h2{margin-bottom:1.2rem}
-.about-copy p{max-width:56ch;margin-bottom:1rem}
-
-/* Contact */
-.contact{background:var(--walnut);color:var(--sawdust)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-lede{max-width:44ch;margin:-1rem 0 1.6rem;color:#e9dcc6}
-.follow{margin-top:1.4rem;color:#d9c9ab}
-.areas h3{margin-bottom:1rem}
-.area-tags{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
-.area-tags li{border:1px solid rgba(248,242,231,.3);border-radius:4px;padding:.25rem .6rem;font-size:.92rem}
-.area-note{color:#d9c9ab}
-
-/* Footer */
-.foot{background:#21160d;color:#d9c9ab;padding:2.4rem 0;font-size:.95rem}
-.foot-row{display:grid;gap:1rem}
-.foot-brand{display:flex;align-items:center;gap:.6rem;font-family:Anton,sans-serif;text-transform:uppercase;color:var(--sawdust);font-size:1.15rem}
-.foot-brand img{width:44px;height:auto}
-.foot-links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
-.foot-links a{color:var(--sawdust)}
-
-/* Mobile sticky bar */
-.mob-bar{display:none}
-
-@media(max-width:900px){
-  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--sawdust);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}
-  .links.open{display:flex}
-  .links a{padding:.8rem 0;border-bottom:1px solid var(--line);font-size:1.1rem}
-  .links .nav-cta{margin-top:.8rem;text-align:center;border:0}
-  .burger{display:block}
-  .nav-row{position:relative}
-  .svc-grid,.rev-row{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  body{padding-bottom:4.6rem}
-  section{padding:3.4rem 0}
-  h2{margin-bottom:1.4rem}
-  .brand{font-size:1.1rem}.brand img{width:44px}
-  .hero{grid-template-columns:1fr;min-height:0}
-  .hero-photo{order:1;height:40vh;min-height:240px}
-  .hero-copy{order:2;padding:1.8rem 1.5rem 2.4rem}
-  .lede{font-size:1.05rem}
-  .btn{width:100%}
-  .trust-cell{padding:.9rem 1.4rem}
-  .svc-grid{grid-template-columns:1fr;gap:1.2rem}
-  .svc{display:grid;grid-template-columns:38% 1fr;align-items:center}
-  .svc-img{aspect-ratio:auto;height:100%;min-height:150px;grid-row:span 3}
-  .svc h3{margin:1rem 1rem .3rem;font-size:1.35rem}
-  .svc p{margin:0 1rem;font-size:.95rem;line-height:1.45}
-  .svc-link{margin:.6rem 1rem 1rem;font-size:.95rem}
-  .step-list{grid-template-columns:1fr}
-  .step-list li{padding:1.3rem 0;border-bottom:1px solid rgba(248,242,231,.15)}
-  .step-n{font-size:2.6rem}
-  .seq-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -1.5rem;padding:.6rem 1.5rem 1rem;scrollbar-width:none;scroll-padding-inline:1.5rem}
-  .seq-row::-webkit-scrollbar,.rev-row::-webkit-scrollbar{display:none}
-  .seq-row li{flex:0 0 66%;scroll-snap-align:start}
-  .work-grid{grid-template-columns:1fr 1fr;gap:.6rem}
-  .work-grid figcaption{font-size:.82rem;padding:1.2rem .6rem .5rem}
-  .rev-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -1.5rem;padding:0 1.5rem .4rem;scrollbar-width:none;scroll-padding-inline:1.5rem}
-  .rev-row .rcard{flex:0 0 82%;scroll-snap-align:start}
-  .rev-row .rcard:nth-child(n+7){display:block}
-  .about-grid{grid-template-columns:1fr;gap:1.6rem}
-  .about-photo{aspect-ratio:16/10}
-  .about-copy p:nth-of-type(3){display:none}
-  .contact-grid{grid-template-columns:1fr;gap:2.4rem}
-  .contact-lede{margin-top:-.4rem}
-  .mob-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:.6rem;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));background:var(--sawdust);border-top:1px solid var(--line)}
-  .mob-bar a{flex:1;text-align:center;padding:.85rem .5rem;font-weight:700;border-radius:6px;text-decoration:none}
-  .mb-call{background:var(--orange);color:#fff}
-  .mb-wa{background:#25D366;color:#fff}
-}
-</style>
+<link rel="stylesheet" href="site.css"/>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -203,8 +34,8 @@ section{padding:5rem 0}
       <a href="services.html#fencing">Fencing</a>
       <a href="services.html#garden">Garden timber</a>
       <a href="gallery.html">Gallery</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#about">About</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#about">About</a>
       <a class="nav-cta" href="https://wa.me/447855523033" target="_blank" rel="noopener">WhatsApp Darren</a>
     </nav>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -213,7 +44,7 @@ section{padding:5rem 0}
 
 <main>
 <section class="hero">
-  <div class="hero-photo"><img src="assets/gallery-decking-bristol.jpg" alt="Corner deck with pergola and balustrade, built by Dragonfly Woodcraft"/></div>
+  <div class="hero-photo"><img src="assets/hero-pergola-seating.jpg" alt="Deck, pergola, built-in seating and planters, built by Darren" width="1400" height="1050"/></div>
   <div class="hero-copy">
     <h1><span class="l1">Decking, fencing &amp; garden timber.</span><span class="l2">Built by Darren.</span></h1>
     <p class="lede">Designed and built by one person across Bristol, South Glos and surrounding areas. Fully insured, with a 12-month workmanship guarantee.</p>
@@ -241,13 +72,13 @@ section{padding:5rem 0}
     <h2>What I build</h2>
     <div class="svc-grid">
       <a class="svc" href="services.html#decking">
-        <div class="svc-img"><img src="assets/gallery-raised-deck-balustrade.jpg" alt="Raised timber deck with balustrade" loading="lazy"/></div>
+        <div class="svc-img"><img src="assets/deck-corner-balustrade.jpg" alt="Corner deck with timber balustrade" loading="lazy"/></div>
         <h3>Decking</h3>
         <p>Ground-level to raised decks, with steps, balustrades and pergolas. Timber or composite.</p>
         <span class="svc-link">See decking</span>
       </a>
       <a class="svc" href="services.html#fencing">
-        <div class="svc-img"><img src="assets/gallery-lshaped-decking-fencing.jpg" alt="New closeboard fencing around an L-shaped deck" loading="lazy"/></div>
+        <div class="svc-img"><img src="assets/deck-two-level-closeboard-fence.jpg" alt="New closeboard fence behind a two-level deck" loading="lazy"/></div>
         <h3>Fencing</h3>
         <p>Closeboard, feather-edge, panels and gates. Posts set at the right depth so they last.</p>
         <span class="svc-link">See fencing</span>
@@ -277,10 +108,10 @@ section{padding:5rem 0}
   <div class="wrap">
     <div class="seq-head"><h2>A custom shed, start to finish</h2><p>Built to fit the space, not picked from a catalogue.</p></div>
     <ol class="seq-row">
-      <li><img src="assets/seq-shed-step1.jpg" alt="Shed base and wall frames" loading="lazy"/><span>Base and wall frames</span></li>
-      <li><img src="assets/seq-shed-step2.jpg" alt="Shed roof structure" loading="lazy"/><span>Roof structure</span></li>
-      <li><img src="assets/seq-shed-step3.jpg" alt="Shed with roof on" loading="lazy"/><span>Roof on</span></li>
-      <li><img src="assets/seq-shed-step4.jpg" alt="Finished clad shed" loading="lazy"/><span>Clad and finished</span></li>
+      <li><img src="assets/seq-shed-step1.jpg" alt="Shed base and wall frames" loading="lazy"/><span>Frame up, floor down</span></li>
+      <li><img src="assets/seq-shed-step2.jpg" alt="Shed roof structure" loading="lazy"/><span>Roof trusses going on</span></li>
+      <li><img src="assets/seq-shed-step3.jpg" alt="Shed with roof on" loading="lazy"/><span>Walls framed, ready to clad</span></li>
+      <li><img src="assets/seq-shed-step4.jpg" alt="Finished clad shed" loading="lazy"/><span>Finished, ready to use</span></li>
     </ol>
     <a class="text-link" href="gallery.html#sequences">See more builds, step by step</a>
   </div>
@@ -290,12 +121,12 @@ section{padding:5rem 0}
   <div class="wrap">
     <h2>Recent work</h2>
     <div class="work-grid">
+      <figure><img src="assets/deck-corner-pergola.jpg" alt="Corner deck with pergola and balustrade" loading="lazy"/><figcaption>Corner deck with pergola</figcaption></figure>
+      <figure><img src="assets/deck-rope-posts.jpg" alt="Deck with rope and post edging" loading="lazy"/><figcaption>Deck with rope edging</figcaption></figure>
+      <figure><img src="assets/deck-balustrade-steps.jpg" alt="Raised deck with turned balustrade and steps" loading="lazy"/><figcaption>Balustrade and steps</figcaption></figure>
+      <figure><img src="assets/deck-raised-with-steps.jpg" alt="Raised deck with wide steps" loading="lazy"/><figcaption>Raised deck with steps</figcaption></figure>
       <figure><img src="assets/gallery-deck-pergola-thornbury.jpg" alt="Deck over a river with rope balustrade" loading="lazy"/><figcaption>Forest deck over a river</figcaption></figure>
       <figure><img src="assets/gallery-childrens-play-area.jpg" alt="Children's timber play area" loading="lazy"/><figcaption>Children's play area</figcaption></figure>
-      <figure><img src="assets/gallery-bespoke-woodland-platform.jpg" alt="Timber decking staircase" loading="lazy"/><figcaption>Decking staircase</figcaption></figure>
-      <figure><img src="assets/gallery-raised-garden-beds.jpg" alt="Raised timber garden beds" loading="lazy"/><figcaption>Raised garden beds</figcaption></figure>
-      <figure><img src="assets/seq-deck-step5.jpg" alt="Finished deck with balustrade" loading="lazy"/><figcaption>Deck with balustrade</figcaption></figure>
-      <figure><img src="assets/gallery-lshaped-decking-fencing.jpg" alt="L-shaped deck with new fencing" loading="lazy"/><figcaption>L-shaped deck and fencing</figcaption></figure>
     </div>
     <a class="btn btn-alt" href="gallery.html">View the full gallery</a>
   </div>
@@ -366,35 +197,6 @@ section{padding:5rem 0}
 
 <div class="mob-bar"><a class="mb-call" href="tel:07855523033">Call Darren</a><a class="mb-wa" href="https://wa.me/447855523033" target="_blank" rel="noopener">WhatsApp</a></div>
 
-<script>
-/* Mobile menu */
-(function(){
-  var b=document.getElementById('burger'),l=document.getElementById('navLinks');
-  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-  l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.setAttribute('aria-expanded','false')}});
-})();
-/* Trust bar: auto-scrolls, swipeable, resumes 2s after the user stops */
-(function(){
-  var bar=document.querySelector('.trust'),row=bar&&bar.querySelector('.trust-row');if(!row)return;
-  row.innerHTML+=row.innerHTML+row.innerHTML;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var SECONDS_PER_LOOP=40,RESUME_MS=2000,pos=null,last=0,resumeAt=0,hovering=false;
-  function hold(){resumeAt=performance.now()+RESUME_MS}
-  ['touchstart','touchmove','pointerdown','wheel'].forEach(function(e){bar.addEventListener(e,hold,{passive:true})});
-  bar.addEventListener('mouseenter',function(){hovering=true});
-  bar.addEventListener('mouseleave',function(){hovering=false;hold()});
-  bar.addEventListener('scroll',function(){if(performance.now()<resumeAt){pos=bar.scrollLeft;hold()}},{passive:true});
-  function step(now){
-    var w=row.scrollWidth/3,dt=last?Math.min(now-last,100):0;last=now;
-    if(w>0){
-      if(pos===null){pos=w;bar.scrollLeft=pos}
-      if(!hovering&&now>=resumeAt){pos+=w/(SECONDS_PER_LOOP*1000)*dt;if(pos>=2*w)pos-=w;else if(pos<w*0.5)pos+=w;bar.scrollLeft=pos}
-      else{pos=bar.scrollLeft}
-    }
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-})();
-</script>
+<script src="site.js" defer></script>
 </body>
 </html>
