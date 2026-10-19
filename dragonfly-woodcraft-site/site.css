@@ -332,3 +332,7 @@ section{padding:5rem 0}
 .rv:not(.has-photo) .rv-body{justify-content:center;padding:2rem 1.8rem}
 .rv:not(.has-photo) blockquote{font-family:Anton,sans-serif;font-size:1.45rem;line-height:1.2;flex:0}
 .rv:not(.has-photo) .rv-stars,.rv:not(.has-photo) figcaption{color:var(--orange)}
+
+/* Shed sequence: square frames, portrait shots anchored to the roof */
+.seq-block .seq-row.shed img{aspect-ratio:1/1}
+.seq-row.shed img.tall{object-position:center 8%}
