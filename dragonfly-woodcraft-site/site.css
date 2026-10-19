@@ -374,7 +374,7 @@ section{padding:5rem 0}
 /* Social links */
 .nav-social{display:flex;align-items:center;gap:.35rem;margin-left:.6rem}
 .nav-social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;color:var(--walnut)}
-.nav-social a:hover{background:var(--oak);color:var(--orange-dk)}
+.nav-social a{transition:transform .15s}.nav-social a:hover{transform:scale(1.08)}
 .foot-social a{color:var(--orange);font-weight:600}
 @media(max-width:900px){.nav-social{margin-left:auto}.nav-social+.burger{margin-left:0}}
 @media(max-width:420px){.brand{white-space:nowrap;font-size:.98rem;gap:.5rem}.brand img{width:38px}.nav-social a{width:36px;height:36px}.nav-row{gap:.4rem}}
