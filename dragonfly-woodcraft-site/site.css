@@ -340,3 +340,16 @@ section{padding:5rem 0}
 .rev-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem}
 .rev-foot .rev-note{margin:0}
 .rv-rating{margin-top:.6rem;font-weight:600}.rv-rating span{color:var(--orange-dk);letter-spacing:2px;margin-right:.3rem}
+
+/* Job showcase on guide pages */
+.job-show{background:var(--oak-2)}
+.job-show h2{margin-bottom:.8rem}
+.job-lede{max-width:62ch;margin-bottom:1.6rem}
+.job-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:1rem}
+.job-grid figure{position:relative;border-radius:4px;overflow:hidden;min-height:220px}
+.job-grid .job-main{grid-row:span 2;min-height:460px}
+.job-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .9rem .7rem;background:linear-gradient(transparent,rgba(43,29,18,.75));color:#fff;font-weight:600;font-size:.95rem}
+.job-quote{max-width:820px;margin-top:2rem;background:var(--walnut);color:var(--sawdust);border-radius:6px;padding:1.8rem 2rem}
+.job-quote blockquote{font-family:Anton,sans-serif;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.2}
+.job-quote figcaption{margin-top:1rem;color:var(--orange);font-weight:700}
+@media(max-width:760px){.job-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.job-grid .job-main{grid-column:span 2;grid-row:auto;min-height:260px}.job-grid figure{min-height:160px}.job-quote{padding:1.4rem}}
