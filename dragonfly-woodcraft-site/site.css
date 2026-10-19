@@ -367,3 +367,6 @@ section{padding:5rem 0}
 .lb-next{right:1rem;top:50%;transform:translateY(-50%)}
 .lb-count{position:absolute;top:1.6rem;left:1.4rem;color:#d9c9ab;font-weight:600}
 @media(max-width:760px){.lb{padding:3.5rem .5rem 4rem}.lb-prev,.lb-next{top:auto;bottom:1rem;transform:none}.lb-prev{left:30%}.lb-next{right:30%}.lb-fig img{max-height:calc(100vh - 11rem)}}
+
+/* Trust bar: headline words in orange capitals */
+.trust-cell strong{color:var(--orange);text-transform:uppercase}
