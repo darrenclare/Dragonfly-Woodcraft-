@@ -327,3 +327,8 @@ section{padding:5rem 0}
 .rv figcaption{margin-top:1rem;color:var(--orange-dk);font-weight:700}
 @media(max-width:900px){.rv{flex-basis:calc((100% - 1.2rem)/2)}}
 @media(max-width:760px){.rv-track{margin:0 -1.5rem;padding:0 1.5rem .4rem;scroll-padding-inline:1.5rem}.rv{flex-basis:84%}.rv-nav{display:none}}
+
+.rv:not(.has-photo){background:var(--walnut);color:var(--sawdust);justify-content:center}
+.rv:not(.has-photo) .rv-body{justify-content:center;padding:2rem 1.8rem}
+.rv:not(.has-photo) blockquote{font-family:Anton,sans-serif;font-size:1.45rem;line-height:1.2;flex:0}
+.rv:not(.has-photo) .rv-stars,.rv:not(.has-photo) figcaption{color:var(--orange)}
