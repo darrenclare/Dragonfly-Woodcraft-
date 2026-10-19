@@ -37,3 +37,12 @@ document.querySelectorAll('.faq-item').forEach(function(item){
   }
   requestAnimationFrame(step);
 })();
+
+/* Reviews carousel buttons */
+(function(){
+  var t=document.getElementById('rvTrack');if(!t)return;
+  function step(d){var c=t.querySelector('.rv');var w=c?c.getBoundingClientRect().width+19:300;
+    if(d>0&&t.scrollLeft+t.clientWidth>=t.scrollWidth-4)t.scrollTo({left:0});else if(d<0&&t.scrollLeft<=4)t.scrollTo({left:t.scrollWidth});else t.scrollBy({left:d*w});}
+  document.getElementById('rvPrev').addEventListener('click',function(){step(-1)});
+  document.getElementById('rvNext').addEventListener('click',function(){step(1)});
+})();

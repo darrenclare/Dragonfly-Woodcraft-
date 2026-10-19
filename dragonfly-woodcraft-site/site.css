@@ -296,3 +296,39 @@ section{padding:5rem 0}
   .seq-block .seq-row li{flex:0 0 70%}
   .matl-card{padding:1.5rem}
 }
+
+/* Wide screens: keep hero centred, symmetric with the nav */
+@media(min-width:1300px){
+  .hero{padding-inline:calc((100vw - 1180px)/2);min-height:min(72vh,680px)}
+  .hero-copy{padding:3.5rem 3rem 3.5rem 1.5rem}
+  .hero-photo{border-radius:6px;overflow:hidden;margin:2rem 1.5rem 2rem 0}
+}
+
+/* Triple-level deck sequence */
+.seq-row.wide5{grid-template-columns:repeat(5,1fr)}
+.seq-row.wide5 img,.seq-row.tri img{aspect-ratio:4/3}
+.seq-block .seq-row.tri{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.seq-row.wide5 li,.seq-block .seq-row.tri li{flex:0 0 78%}}
+
+/* Reviews carousel */
+.rv-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.6rem}
+.rv-head h2{margin:0}
+.rv-nav{display:flex;gap:.5rem}
+.rv-btn{width:46px;height:46px;border-radius:50%;border:2px solid var(--walnut);background:none;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--walnut)}
+.rv-btn:hover{background:var(--walnut);color:var(--sawdust)}
+.rv-track{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:.4rem}
+.rv-track::-webkit-scrollbar{display:none}
+.rv{flex:0 0 calc((100% - 2.4rem)/3);scroll-snap-align:start;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 0 var(--line);display:flex;flex-direction:column}
+.rv-photo{overflow:hidden}
+.rv-photo img{aspect-ratio:4/3;height:auto;object-position:center 40%}
+.rv-body{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.rv-stars{color:var(--orange-dk);letter-spacing:2px;margin-bottom:.5rem}
+.rv blockquote{font-size:1rem;flex:1}
+.rv figcaption{margin-top:1rem;color:var(--orange-dk);font-weight:700}
+@media(max-width:900px){.rv{flex-basis:calc((100% - 1.2rem)/2)}}
+@media(max-width:760px){.rv-track{margin:0 -1.5rem;padding:0 1.5rem .4rem;scroll-padding-inline:1.5rem}.rv{flex-basis:84%}.rv-nav{display:none}}
+
+.rv:not(.has-photo){background:var(--walnut);color:var(--sawdust);justify-content:center}
+.rv:not(.has-photo) .rv-body{justify-content:center;padding:2rem 1.8rem}
+.rv:not(.has-photo) blockquote{font-family:Anton,sans-serif;font-size:1.45rem;line-height:1.2;flex:0}
+.rv:not(.has-photo) .rv-stars,.rv:not(.has-photo) figcaption{color:var(--orange)}
