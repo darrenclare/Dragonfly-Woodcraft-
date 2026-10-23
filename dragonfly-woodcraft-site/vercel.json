@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/composite-decking.html", "destination": "/guides/composite-decking.html", "permanent": true },
+    { "source": "/composite-decking", "destination": "/guides/composite-decking.html", "permanent": true },
+    { "source": "/timber-decking.html", "destination": "/guides/timber-decking.html", "permanent": true },
+    { "source": "/timber-decking", "destination": "/guides/timber-decking.html", "permanent": true }
+  ]
+}
