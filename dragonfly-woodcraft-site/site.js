@@ -73,3 +73,26 @@ document.querySelectorAll('.faq-item').forEach(function(item){
   var x0=null;box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
   box.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(i+(dx<0?1:-1));x0=null});
 })();
+
+/* Cookie consent for Microsoft Clarity. Choice is stored in this browser and sent to Clarity on every page.
+   Accept = full tracking (sessions join up across pages). Decline = Clarity sets no cookies. No ad storage ever. */
+(function(){
+  var KEY='dw-consent';
+  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function save(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  function send(v){try{if(window.clarity)window.clarity('consentv2',{ad_Storage:'denied',analytics_Storage:v})}catch(e){}}
+  var box=null;
+  function choose(v){save(v);send(v);if(box){box.remove();box=null}}
+  function show(){
+    if(box)return;
+    box=document.createElement('div');box.className='ck';box.setAttribute('role','region');box.setAttribute('aria-label','Cookie choice');
+    box.innerHTML='<p>This site uses Microsoft Clarity cookies to see how visitors use it, so it can be improved. No advertising, nothing sold.</p><div class="ck-btns"><button type="button" class="ck-yes">Accept</button><button type="button" class="ck-no">Decline</button></div>';
+    box.querySelector('.ck-yes').addEventListener('click',function(){choose('granted')});
+    box.querySelector('.ck-no').addEventListener('click',function(){choose('denied')});
+    document.body.appendChild(box);
+  }
+  var c=get();
+  if(c==='granted'||c==='denied')send(c);else show();
+  var links=document.querySelector('.foot-links');
+  if(links){var b=document.createElement('button');b.type='button';b.className='ck-link';b.textContent='Cookie settings';b.addEventListener('click',show);links.appendChild(b)}
+})();
