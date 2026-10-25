@@ -464,3 +464,11 @@ section{padding:5rem 0}
   .brand span{font-size:1rem}
 }
 @media(min-width:901px) and (max-width:1080px){.nav-social{display:none}.brand{white-space:nowrap}}
+
+/* Guide byline, inline links, numbered steps */
+.byline{font-size:.95rem!important;color:var(--moss);margin-top:.9rem!important}
+.byline strong{color:var(--walnut)}
+.inline-link{color:var(--orange-dk);font-weight:700}
+.steps-ol{margin:0 0 1rem 1.3rem}
+.steps-ol li{margin-bottom:.5rem;padding-left:.2rem}
+.steps-ol li::marker{color:var(--orange-dk);font-weight:700}
