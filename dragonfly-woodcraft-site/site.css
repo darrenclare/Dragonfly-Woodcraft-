@@ -465,6 +465,7 @@ section{padding:5rem 0}
   .brand span{font-size:1rem}
 }
 @media(min-width:901px) and (max-width:1220px){.nav-social{display:none}.brand{white-space:nowrap}}
+@media(min-width:901px) and (max-width:1060px){.brand{white-space:normal;line-height:1.05}.brand span{max-width:7.5em}.links{gap:.7rem}}
 
 /* Guide byline, inline links, numbered steps */
 .byline{font-size:.95rem!important;color:var(--moss);margin-top:.9rem!important}
@@ -474,3 +475,4 @@ section{padding:5rem 0}
 .steps-ol li{margin-bottom:.5rem;padding-left:.2rem}
 .steps-ol li::marker{color:var(--orange-dk);font-weight:700}
 @media(max-width:480px){.brand{white-space:normal;line-height:1.05}.brand span{max-width:7.5em}}
+@media(max-width:360px){.nav-social{gap:.1rem}.nav-social a{width:32px;height:32px}.nav-social svg{width:24px;height:24px}}
