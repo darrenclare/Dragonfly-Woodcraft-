@@ -339,6 +339,7 @@ section{padding:5rem 0}
 
 .rev-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem}
 .rev-foot .rev-note{margin:0}
+.rev-btns{display:flex;flex-wrap:wrap;gap:.6rem}
 .rv-rating{margin-top:.6rem;font-weight:600}.rv-rating span{color:var(--orange-dk);letter-spacing:2px;margin-right:.3rem}
 
 /* Job showcase on guide pages */
