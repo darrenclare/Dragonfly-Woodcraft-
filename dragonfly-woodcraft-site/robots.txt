@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.dragonflywoodcraft.co.uk/sitemap.xml
